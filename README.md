@@ -75,8 +75,8 @@ Jika Anda menyukai proyek ini, jangan lupa untuk:
 - 💡 Ajukan fitur baru
 
 ## 📫 Kontak
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@Mistekom](https://github.com/Mistekom)
+- Email: ommistek@gmail.com
 
 ---
 
