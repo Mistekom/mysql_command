@@ -81,5 +81,5 @@ Jika Anda menyukai proyek ini, jangan lupa untuk:
 ---
 
 <div align="center">
-Made with ❤️ by [Your Name]
+Made with ❤️ by Mistekom
 </div> 
