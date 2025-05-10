@@ -1,4 +1,4 @@
-# 🗄️ Panduan Lengkap MySQL
+# 🗄️ Panduan Perintah MySQL
 
 <div align="center">
 
@@ -12,228 +12,649 @@
 
 </div>
 
+<div align="center">
+
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![SQL](https://img.shields.io/badge/SQL-000000?style=for-the-badge&logo=sql&logoColor=white)](https://www.mysql.com/)
+[![Database](https://img.shields.io/badge/Database-336791?style=for-the-badge&logo=database&logoColor=white)](https://www.mysql.com/)
+
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&pause=1500&color=336791&center=true&vCenter=true&random=false&width=700&height=100&lines=MySQL+Commands+Guide;Master+Database+Management;Best+Practices+Included;Complete+Reference+Guide;Professional+Database+Guide" alt="Typing SVG" />
+</div>
+
 ## 📋 Fitur Utama
-- ✅ Panduan lengkap dari dasar hingga lanjutan
-- 📚 Glosarium istilah MySQL terlengkap
-- 🎯 Contoh kasus dan praktik terbaik
-- 🔧 Tips dan trik optimasi
-- 🛠️ Troubleshooting umum
-- 📊 Monitoring dan maintenance
-- 🔒 Keamanan database
-- 🚀 High availability
+<div align="center">
+
+| 🎯 Fitur | 📝 Deskripsi | 💡 Contoh Penggunaan |
+|----------|-------------|---------------------|
+| ✅ Panduan Lengkap | Dari dasar hingga lanjutan | Query dasar hingga optimasi |
+| 📚 Glosarium | Istilah MySQL terlengkap | Referensi cepat istilah |
+| 🎯 Contoh Kasus | Praktik terbaik dan contoh nyata | Studi kasus e-commerce |
+| 🔧 Tips & Trik | Optimasi dan troubleshooting | Solusi masalah umum |
+| 🛠️ Tools | Monitoring dan maintenance | MySQL Workbench, phpMyAdmin |
+| 🔒 Keamanan | Best practices keamanan database | Enkripsi, backup, audit |
+| 🚀 HA | High availability dan scaling | Replikasi, clustering |
+
+</div>
 
 ## 🎯 Target Pembaca
-- 👨‍💻 Developer pemula
-- 👩‍💻 Database administrator
-- 🎓 Mahasiswa
-- 👨‍🏫 Dosen
-- 👨‍🔧 System administrator
+<div align="center">
+
+| 👨‍💻 Role | 🎯 Tujuan | 📚 Materi Fokus |
+|----------|-----------|----------------|
+| Developer | Meningkatkan skill database | Query, optimasi, best practices |
+| DBA | Referensi cepat | Maintenance, HA, security |
+| Mahasiswa | Belajar MySQL | Dasar, contoh kasus, praktik |
+| Dosen | Materi pengajaran | Kurikulum, latihan, referensi |
+| SysAdmin | Manajemen database | Monitoring, backup, security |
+
+</div>
 
 ## 📚 Prasyarat
-- Pengetahuan dasar komputer
-- Pemahaman dasar database
-- Akses ke MySQL Server
-- Text editor atau IDE
+<div align="center">
+
+| 📋 Kebutuhan | ✅ Status | 🎯 Tujuan |
+|-------------|-----------|-----------|
+| Pengetahuan Dasar Komputer | Wajib | Memahami konsep dasar |
+| Pemahaman Database | Wajib | Menguasai konsep DBMS |
+| Akses MySQL Server | Wajib | Praktik langsung |
+| Text Editor/IDE | Wajib | Pengembangan query |
+
+</div>
+
+## 🚦 Tips Memulai Belajar dari Panduan Ini
+
+1. **Jangan Takut dengan Banyaknya Materi!**  
+   Panduan ini memang sangat lengkap, tapi kamu tidak perlu mempelajari semuanya sekaligus. Mulailah dari bagian yang paling sesuai dengan kebutuhan atau levelmu saat ini.
+
+2. **Ikuti Urutan Level**  
+   Lihat bagian [Panduan Belajar](#2--panduan-belajar) dan [Level Pembelajaran](#21--level-pembelajaran).  
+   - Jika kamu benar-benar pemula, mulai dari **Level Basic**:  
+     - [Tipe Data](#3--tipe-data)  
+     - [Perintah Dasar](#4--perintah-dasar)  
+     - [Operasi Tabel](#5--operasi-tabel)  
+     - [Operasi Data (CRUD)](#6--operasi-data-crud)  
+   - Setelah paham dasar, lanjutkan ke level berikutnya.
+
+3. **Praktik Langsung**  
+   Jangan hanya membaca! Cobalah contoh-contoh query di MySQL Workbench, terminal, atau phpMyAdmin.  
+   Lihat juga [Latihan Praktis](#23--latihan-praktis) dan [Contoh Kasus Sederhana](#13--contoh-kasus-sederhana).
+
+4. **Gunakan Daftar Isi & Glosarium**  
+   Manfaatkan [Daftar Isi](#-daftar-isi) untuk navigasi cepat.  
+   Jika menemukan istilah asing, cek [Glosarium](#23--glosarium-istilah-mysql).
+
+5. **Fokus pada Satu Topik per Hari**  
+   Agar tidak kewalahan, pelajari satu topik saja setiap hari. Misal hari ini belajar SELECT, besok INSERT, dst.
+
+6. **Bertanya Jika Bingung**  
+   Jika ada bagian yang tidak paham, jangan ragu bertanya di komunitas, forum, atau diskusi GitHub.
+
+7. **Jadikan Panduan Ini Referensi Harian**  
+   Tidak perlu hafal semua! Cukup tahu di mana mencari saat butuh.
+
+## 🚀 Quick Start (5 Menit)
+
+1. **Install MySQL**
+   ```bash
+   # Windows: Download MySQL Installer
+   # Linux: sudo apt install mysql-server
+   # macOS: brew install mysql
+   ```
+
+2. **Start MySQL**
+   ```bash
+   # Windows: Start MySQL Service
+   # Linux: sudo systemctl start mysql
+   # macOS: brew services start mysql
+   ```
+
+3. **Login ke MySQL**
+   ```bash
+   mysql -u root -p
+   ```
+
+4. **Buat Database Pertama**
+   ```sql
+   CREATE DATABASE belajar_mysql;
+   USE belajar_mysql;
+   ```
+
+5. **Buat Tabel Pertama**
+   ```sql
+   CREATE TABLE users (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       nama VARCHAR(100),
+       email VARCHAR(100)
+   );
+   ```
+
+6. **Coba CRUD Dasar**
+   ```sql
+   -- Create (Insert)
+   INSERT INTO users (nama, email) VALUES ('John Doe', 'john@example.com');
+   
+   -- Read (Select)
+   SELECT * FROM users;
+   
+   -- Update
+   UPDATE users SET nama = 'John Updated' WHERE id = 1;
+   
+   -- Delete
+   DELETE FROM users WHERE id = 1;
+   ```
+
+## ⚠️ Common Mistakes & Solusinya
+
+1. **Lupa Password Root**
+   ```bash
+   # Solusi:
+   sudo systemctl stop mysql
+   sudo mysqld_safe --skip-grant-tables &
+   mysql -u root
+   ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+   ```
+
+2. **Error "Access Denied"**
+   - Pastikan username dan password benar
+   - Periksa host yang diizinkan
+   - Cek hak akses user
+
+3. **Tabel Tidak Muncul**
+   - Pastikan sudah `USE database_name`
+   - Periksa case sensitivity nama tabel
+   - Cek hak akses ke tabel
+
+4. **Data Tidak Tersimpan**
+   - Pastikan sudah `COMMIT` jika menggunakan transaksi
+   - Periksa constraint tabel
+   - Cek tipe data yang sesuai
+
+5. **Query Terlalu Lambat**
+   - Gunakan `EXPLAIN` untuk analisis query
+   - Tambahkan indeks yang sesuai
+   - Batasi jumlah data yang diambil
+
+6. **Karakter Aneh di Data**
+   - Set karakter set ke `utf8mb4`
+   - Periksa collation database dan tabel
+   - Pastikan koneksi menggunakan charset yang benar
+
+## 📊 Roadmap Pembelajaran MySQL
+
+```mermaid
+graph TD
+    A[Level Basic] --> B[Tipe Data]
+    A --> C[Perintah Dasar]
+    A --> D[Operasi Tabel]
+    A --> E[CRUD]
+    
+    F[Level Intermediate] --> G[Query Lanjutan]
+    F --> H[Fungsi Agregasi]
+    F --> I[Indeks]
+    F --> J[Backup/Restore]
+    
+    K[Level Advanced] --> L[Optimasi]
+    K --> M[Replikasi]
+    K --> N[HA]
+    K --> O[Security]
+    
+    E --> F
+    J --> K
+```
 
 ## 📑 Daftar Isi
 - [🗄️ Panduan Perintah MySQL](#️-panduan-perintah-mysql)
   - [📋 Fitur Utama](#-fitur-utama)
   - [🎯 Target Pembaca](#-target-pembaca)
   - [📚 Prasyarat](#-prasyarat)
+  - [🚦 Tips Memulai Belajar dari Panduan Ini](#-tips-memulai-belajar-dari-panduan-ini)
+  - [🚀 Quick Start (5 Menit)](#-quick-start-5-menit)
+  - [⚠️ Common Mistakes \& Solusinya](#️-common-mistakes--solusinya)
+  - [📊 Roadmap Pembelajaran MySQL](#-roadmap-pembelajaran-mysql)
   - [📑 Daftar Isi](#-daftar-isi)
-  - [1. 🚀 Memulai dengan MySQL](#-memulai-dengan-mysql)
-    - [1.1 📥 Instalasi MySQL](#-instalasi-mysql)
-    - [1.2 🔍 Troubleshooting Umum](#-troubleshooting-umum)
-    - [1.3 🎯 Contoh Kasus Sederhana](#-contoh-kasus-sederhana)
-    - [1.4 📝 Tips untuk Pemula](#-tips-untuk-pemula)
-  - [2. 📚 Panduan Belajar](#-panduan-belajar)
-    - [2.1 🎯 Level Pembelajaran](#-level-pembelajaran)
-    - [2.2 📋 Prasyarat Pembelajaran](#-prasyarat-pembelajaran)
-    - [2.3 🎮 Latihan Praktis](#-latihan-praktis)
-    - [2.4 📝 Tips Belajar](#-tips-belajar)
-  - [3. 📋 Tipe Data](#-1-tipe-data)
-  - [4. 📌 Perintah Dasar](#-2-perintah-dasar)
-  - [5. 📊 Operasi Tabel](#-3-operasi-tabel)
-  - [6. 🔄 Operasi Data (CRUD)](#-4-operasi-data-crud)
-  - [7. 🔍 Query Lanjutan](#-5-query-lanjutan)
-  - [8. 📊 Fungsi Agregasi](#-6-fungsi-agregasi)
-  - [9. 📅 Fungsi Tanggal dan Waktu](#-7-fungsi-tanggal-dan-waktu)
-  - [10. 📝 Fungsi String](#-8-fungsi-string)
-  - [11. 🔢 Fungsi Numerik](#-9-fungsi-numerik)
-  - [12. 📌 Indeks](#-10-indeks)
-  - [13. 💾 Backup dan Restore](#-11-backup-dan-restore)
-  - [14. 🔧 Praktik Terbaik MySQL](#-12-praktik-terbaik-mysql)
-  - [15. 🔄 Replikasi MySQL](#-13-replikasi-mysql)
-  - [16. 🚀 High Availability](#-14-high-availability)
-  - [17. 📦 Migrasi Database](#-15-migrasi-database)
-  - [18. 🛠️ MySQL Workbench](#️-16-mysql-workbench)
-  - [19. ⚡ Optimasi Query](#-17-optimasi-query)
-  - [20. 👥 Manajemen User dan Hak Akses](#-18-manajemen-user-dan-hak-akses)
-  - [21. 🔒 Keamanan Database](#-19-keamanan-database)
-  - [22. 💻 Best Practices Pengembangan](#-20-best-practices-pengembangan)
-  - [23. 📚 Glosarium Istilah MySQL](#-22-glosarium-istilah-mysql)
-    - [23.1 🔍 Cara Menggunakan Glosarium](#-cara-menggunakan-glosarium)
-    - [23.2 Istilah Dasar](#1-istilah-dasar)
-    - [23.3 Istilah Teknis](#2-istilah-teknis)
-    - [23.4 Istilah Operasi](#3-istilah-operasi)
-    - [23.5 Istilah Performa](#4-istilah-performa)
-    - [23.6 Istilah Keamanan](#5-istilah-keamanan)
-    - [23.7 Istilah Development](#6-istilah-development)
-    - [23.8 Istilah Error](#7-istilah-error)
-    - [23.9 Istilah Monitoring](#8-istilah-monitoring)
-    - [23.10 Istilah Fungsi MySQL](#9-istilah-fungsi-mysql)
-    - [23.11 Istilah Tipe Data](#10-istilah-tipe-data)
-    - [23.12 Istilah Join](#11-istilah-join)
-    - [23.13 Istilah Optimasi](#12-istilah-optimasi)
-    - [23.14 Istilah Replikasi](#13-istilah-replikasi)
-    - [23.15 Istilah Backup](#14-istilah-backup)
-    - [23.16 Istilah Keamanan Lanjutan](#15-istilah-keamanan-lanjutan)
-  - [24. 📝 Catatan Penting](#-catatan-penting)
-  - [25. 🤝 Berkontribusi](#-berkontribusi)
-  - [26. 📄 Lisensi](#-lisensi)
-  - [27. 🙏 Terima Kasih](#-terima-kasih)
+  - [1. 🚀 Memulai dengan MySQL](#1--memulai-dengan-mysql)
+    - [1.1 📥 Instalasi MySQL](#11--instalasi-mysql)
+    - [1.2 🔍 Troubleshooting Umum](#12--troubleshooting-umum)
+    - [1.3 🎯 Contoh Kasus Sederhana](#13--contoh-kasus-sederhana)
+    - [1.4 📝 Tips untuk Pemula](#14--tips-untuk-pemula)
+  - [2. 📚 Panduan Belajar](#2--panduan-belajar)
+    - [2.1 🎯 Level Pembelajaran](#21--level-pembelajaran)
+    - [2.2 📋 Prasyarat Pembelajaran](#22--prasyarat-pembelajaran)
+    - [2.3 🎮 Latihan Praktis](#23--latihan-praktis)
+    - [2.4 📝 Tips Belajar](#24--tips-belajar)
+  - [3. 📋 Tipe Data](#3--tipe-data)
+  - [4. 📌 Perintah Dasar](#4--perintah-dasar)
+  - [5. 📊 Operasi Tabel](#5--operasi-tabel)
+  - [6. 🔄 Operasi Data (CRUD)](#6--operasi-data-crud)
+  - [7. 🔍 Query Lanjutan](#7--query-lanjutan)
+  - [8. 📊 Fungsi Agregasi](#8--fungsi-agregasi)
+  - [9. 📅 Fungsi Tanggal dan Waktu](#9--fungsi-tanggal-dan-waktu)
+  - [10. 📝 Fungsi String](#10--fungsi-string)
+  - [11. 🔢 Fungsi Numerik](#11--fungsi-numerik)
+  - [12. 📌 Indeks](#12--indeks)
+  - [13. 💾 Backup dan Restore](#13--backup-dan-restore)
+  - [14. 🔧 Praktik Terbaik MySQL](#14--praktik-terbaik-mysql)
+  - [15. 🔄 Replikasi MySQL](#15--replikasi-mysql)
+  - [16. 🚀 High Availability](#16--high-availability)
+  - [17. 📦 Migrasi Database](#17--migrasi-database)
+  - [18. 🛠️ MySQL Workbench](#18-️-mysql-workbench)
+  - [19. ⚡ Optimasi Query](#19--optimasi-query)
+  - [20. 👥 Manajemen User dan Hak Akses](#20--manajemen-user-dan-hak-akses)
+  - [21. 🔒 Keamanan Database](#21--keamanan-database)
+  - [22. 💻 Best Practices Pengembangan](#22--best-practices-pengembangan)
+  - [23. 📚 Glosarium Istilah MySQL](#23--glosarium-istilah-mysql)
+    - [23.1 🔍 Cara Menggunakan Glosarium](#231--cara-menggunakan-glosarium)
+    - [23.2 Istilah Dasar](#232-istilah-dasar)
+      - [A. Konsep Database](#a-konsep-database)
+      - [B. Struktur Data](#b-struktur-data)
+      - [C. Operasi Dasar](#c-operasi-dasar)
+      - [D. Tipe Data](#d-tipe-data)
+      - [E. Perintah SQL](#e-perintah-sql)
+      - [F. Relasi](#f-relasi)
+      - [G. Optimasi](#g-optimasi)
+      - [H. Keamanan](#h-keamanan)
+      - [I. Maintenance](#i-maintenance)
+      - [J. Monitoring](#j-monitoring)
+  - [24. 📝 Catatan Penting](#24--catatan-penting)
+  - [🤝 Berkontribusi](#-berkontribusi)
+  - [📄 Lisensi](#-lisensi)
+  - [🙏 Terima Kasih](#-terima-kasih)
 
----
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
-## 🚀 Memulai dengan MySQL
+## 1. 🚀 Memulai dengan MySQL
 
-### 📥 Instalasi MySQL
+### 1.1 📥 Instalasi MySQL
 
-1. **Windows**
-   ```bash
-   # Download MySQL Installer dari website resmi
-   # https://dev.mysql.com/downloads/installer/
-   
-   # Ikuti langkah instalasi:
-   # 1. Pilih "Developer Default"
-   # 2. Klik "Next" sampai selesai
-   # 3. Set password root
-   # 4. Selesai
-   ```
+<details>
+<summary>🪟 Windows</summary>
 
-2. **Linux (Ubuntu)**
-   ```bash
-   # Update package list
-   sudo apt update
-   
-   # Install MySQL
-   sudo apt install mysql-server
-   
-   # Start MySQL service
-   sudo systemctl start mysql
-   
-   # Enable MySQL on boot
-   sudo systemctl enable mysql
-   
-   # Secure installation
-   sudo mysql_secure_installation
-   ```
+```bash
+# 1. Download MySQL Installer
+# Kunjungi: https://dev.mysql.com/downloads/installer/
 
-3. **macOS**
-   ```bash
-   # Menggunakan Homebrew
-   brew install mysql
-   
-   # Start MySQL service
-   brew services start mysql
-   
-   # Secure installation
-   mysql_secure_installation
-   ```
+# 2. Jalankan installer
+# - Pilih "Developer Default" atau "Server only"
+# - Ikuti wizard instalasi
+# - Catat root password yang dibuat
 
-### 🔍 Troubleshooting Umum
+# 3. Verifikasi instalasi
+mysql -u root -p
+```
 
-1. **Tidak bisa koneksi ke MySQL**
-   ```bash
-   # Cek status service
-   sudo systemctl status mysql
-   
-   # Restart service
-   sudo systemctl restart mysql
-   
-   # Cek port
-   sudo netstat -tlnp | grep mysql
-   ```
+> 💡 **Tips Windows**: 
+> - Gunakan MySQL Installer untuk instalasi mudah
+> - Pastikan menambahkan MySQL ke PATH sistem
+> - Gunakan MySQL Workbench untuk manajemen visual
+> - Backup data sebelum upgrade versi
+> - Gunakan service manager untuk kontrol service
+</details>
 
-2. **Lupa password root**
-   ```bash
-   # Stop MySQL
-   sudo systemctl stop mysql
-   
-   # Start MySQL dengan skip grant tables
-   sudo mysqld_safe --skip-grant-tables &
-   
-   # Reset password
-   mysql -u root
-   ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
-   ```
+<details>
+<summary>🐧 Linux (Ubuntu/Debian)</summary>
 
-3. **Error saat instalasi**
-   ```bash
-   # Hapus instalasi yang rusak
-   sudo apt remove --purge mysql*
-   sudo apt autoremove
-   
-   # Install ulang
-   sudo apt update
-   sudo apt install mysql-server
-   ```
+```bash
+# 1. Update package list
+sudo apt update
 
-### 🎯 Contoh Kasus Sederhana
+# 2. Install MySQL Server
+sudo apt install mysql-server
 
-1. **Membuat Database Toko Online**
-   ```sql
-   -- Buat database
-   CREATE DATABASE toko_online;
-   USE toko_online;
-   
-   -- Buat tabel kategori
-   CREATE TABLE kategori (
-       id INT PRIMARY KEY AUTO_INCREMENT,
-       nama VARCHAR(50) NOT NULL
-   );
-   
-   -- Buat tabel produk
-   CREATE TABLE produk (
-       id INT PRIMARY KEY AUTO_INCREMENT,
-       nama VARCHAR(100) NOT NULL,
-       harga DECIMAL(10,2) NOT NULL,
-       stok INT NOT NULL DEFAULT 0,
-       kategori_id INT,
-       FOREIGN KEY (kategori_id) REFERENCES kategori(id)
-   );
-   
-   -- Insert data kategori
-   INSERT INTO kategori (nama) VALUES 
-       ('Elektronik'),
-       ('Pakaian'),
-       ('Makanan');
-   
-   -- Insert data produk
-   INSERT INTO produk (nama, harga, stok, kategori_id) VALUES 
-       ('Laptop', 5000000, 10, 1),
-       ('Smartphone', 2000000, 15, 1),
-       ('Kemeja', 150000, 20, 2);
-   ```
+# 3. Start MySQL service
+sudo systemctl start mysql
+sudo systemctl enable mysql
 
-2. **Query Dasar untuk Toko Online**
-   ```sql
-   -- Lihat semua produk
-   SELECT * FROM produk;
-   
-   -- Lihat produk dengan kategori
-   SELECT p.nama, p.harga, k.nama as kategori
-   FROM produk p
-   JOIN kategori k ON p.kategori_id = k.id;
-   
-   -- Hitung total produk per kategori
-   SELECT k.nama, COUNT(p.id) as total_produk
-   FROM kategori k
-   LEFT JOIN produk p ON k.id = p.kategori_id
-   GROUP BY k.nama;
-   ```
+# 4. Secure installation
+sudo mysql_secure_installation
 
-### 📝 Tips untuk Pemula
+# 5. Verifikasi instalasi
+mysql -u root -p
+```
+
+> 💡 **Tips Linux**: 
+> - Gunakan systemctl untuk manajemen service
+> - Selalu jalankan mysql_secure_installation
+> - Backup konfigurasi di /etc/mysql/
+</details>
+
+<details>
+<summary>🍎 macOS</summary>
+
+```bash
+# 1. Install menggunakan Homebrew
+brew install mysql
+
+# 2. Start MySQL service
+brew services start mysql
+
+# 3. Secure installation
+mysql_secure_installation
+
+# 4. Verifikasi instalasi
+mysql -u root -p
+```
+
+> 💡 **Tips macOS**: 
+> - Gunakan Homebrew untuk manajemen package
+> - Monitor service dengan brew services
+> - Backup data di /usr/local/var/mysql/
+</details>
+
+<details>
+<summary>🐳 Docker</summary>
+
+```bash
+# 1. Pull MySQL image
+docker pull mysql:8.0
+
+# 2. Run MySQL container
+docker run --name mysql-db \
+  -e MYSQL_ROOT_PASSWORD=your_password \
+  -e MYSQL_DATABASE=your_database \
+  -p 3306:3306 \
+  -d mysql:8.0
+
+# 3. Verifikasi instalasi
+docker exec -it mysql-db mysql -u root -p
+```
+
+> 💡 **Tips Docker**: 
+> - Gunakan volume untuk persistensi data
+> - Atur environment variables dengan aman
+> - Monitor container dengan docker stats
+</details>
+
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+### 1.2 🔍 Troubleshooting Umum
+
+<details>
+<summary>Lihat Panduan Troubleshooting</summary>
+
+```bash
+# Tidak bisa koneksi ke MySQL
+sudo systemctl status mysql
+sudo systemctl restart mysql
+sudo netstat -tlnp | grep mysql
+
+# Lupa password root
+sudo systemctl stop mysql
+sudo mysqld_safe --skip-grant-tables &
+mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+
+# Error saat instalasi
+sudo apt remove --purge mysql*
+sudo apt autoremove
+sudo apt update
+sudo apt install mysql-server
+```
+</details>
+
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+### 1.3 🎯 Contoh Kasus Sederhana
+
+<details>
+<summary>📱 Sistem Manajemen Toko Online</summary>
+
+```sql
+-- 1. Struktur Database
+CREATE DATABASE toko_online;
+USE toko_online;
+
+-- 2. Tabel Kategori
+CREATE TABLE kategori (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(50) NOT NULL,
+    deskripsi TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 3. Tabel Produk
+CREATE TABLE produk (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    kategori_id INT,
+    nama VARCHAR(100) NOT NULL,
+    deskripsi TEXT,
+    harga DECIMAL(10,2) NOT NULL,
+    stok INT NOT NULL DEFAULT 0,
+    status ENUM('aktif', 'nonaktif') DEFAULT 'aktif',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+);
+
+-- 4. Tabel Pelanggan
+CREATE TABLE pelanggan (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    telepon VARCHAR(20),
+    alamat TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 5. Tabel Pesanan
+CREATE TABLE pesanan (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pelanggan_id INT,
+    tanggal TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10,2) NOT NULL,
+    status ENUM('pending', 'dibayar', 'dikirim', 'selesai') DEFAULT 'pending',
+    FOREIGN KEY (pelanggan_id) REFERENCES pelanggan(id)
+);
+
+-- 6. Tabel Detail Pesanan
+CREATE TABLE detail_pesanan (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pesanan_id INT,
+    produk_id INT,
+    jumlah INT NOT NULL,
+    harga DECIMAL(10,2) NOT NULL,
+    subtotal DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (pesanan_id) REFERENCES pesanan(id),
+    FOREIGN KEY (produk_id) REFERENCES produk(id)
+);
+
+-- 7. Insert Data Kategori
+INSERT INTO kategori (nama, deskripsi) VALUES 
+    ('Elektronik', 'Produk elektronik dan gadget'),
+    ('Pakaian', 'Pakaian pria dan wanita'),
+    ('Makanan', 'Makanan dan minuman');
+
+-- 8. Insert Data Produk
+INSERT INTO produk (kategori_id, nama, deskripsi, harga, stok) VALUES 
+    (1, 'Smartphone X', 'Smartphone terbaru', 2000000, 10),
+    (1, 'Laptop Pro', 'Laptop untuk profesional', 8000000, 5),
+    (2, 'Kemeja Casual', 'Kemeja casual pria', 150000, 20),
+    (3, 'Snack Pack', 'Paket snack lengkap', 50000, 30);
+
+-- 9. Query untuk Laporan Penjualan
+SELECT 
+    p.nama as produk,
+    k.nama as kategori,
+    COUNT(dp.id) as jumlah_terjual,
+    SUM(dp.jumlah) as total_unit,
+    SUM(dp.subtotal) as total_penjualan
+FROM produk p
+JOIN kategori k ON p.kategori_id = k.id
+LEFT JOIN detail_pesanan dp ON p.id = dp.produk_id
+GROUP BY p.id, p.nama, k.nama
+ORDER BY total_penjualan DESC;
+
+-- 10. Query untuk Stok Menipis
+SELECT 
+    p.nama as produk,
+    k.nama as kategori,
+    p.stok,
+    CASE 
+        WHEN p.stok <= 5 THEN 'Kritis'
+        WHEN p.stok <= 10 THEN 'Rendah'
+        ELSE 'Aman'
+    END as status_stok
+FROM produk p
+JOIN kategori k ON p.kategori_id = k.id
+WHERE p.stok <= 10
+ORDER BY p.stok ASC;
+
+-- 11. Query untuk Analisis Pelanggan
+SELECT 
+    pl.nama as pelanggan,
+    COUNT(p.id) as jumlah_pesanan,
+    SUM(p.total) as total_pembelian,
+    AVG(p.total) as rata_rata_pembelian
+FROM pelanggan pl
+LEFT JOIN pesanan p ON pl.id = p.pelanggan_id
+GROUP BY pl.id, pl.nama
+HAVING jumlah_pesanan > 0
+ORDER BY total_pembelian DESC;
+```
+
+> 💡 **Tips Implementasi**: 
+> - Gunakan indeks untuk kolom yang sering dicari
+> - Implementasikan soft delete untuk data penting
+> - Buat backup otomatis secara berkala
+> - Monitor performa query secara rutin
+> - Implementasikan logging untuk audit trail
+</details>
+
+<details>
+<summary>🏥 Sistem Manajemen Klinik</summary>
+
+```sql
+-- 1. Struktur Database
+CREATE DATABASE klinik;
+USE klinik;
+
+-- 2. Tabel Dokter
+CREATE TABLE dokter (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(100) NOT NULL,
+    spesialisasi VARCHAR(50) NOT NULL,
+    no_izin VARCHAR(20) UNIQUE NOT NULL,
+    telepon VARCHAR(20),
+    email VARCHAR(100) UNIQUE,
+    status ENUM('aktif', 'nonaktif') DEFAULT 'aktif'
+);
+
+-- 3. Tabel Pasien
+CREATE TABLE pasien (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(100) NOT NULL,
+    tanggal_lahir DATE NOT NULL,
+    jenis_kelamin ENUM('L', 'P') NOT NULL,
+    alamat TEXT,
+    telepon VARCHAR(20),
+    email VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 4. Tabel Jadwal
+CREATE TABLE jadwal (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    dokter_id INT,
+    hari ENUM('Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu') NOT NULL,
+    jam_mulai TIME NOT NULL,
+    jam_selesai TIME NOT NULL,
+    kuota INT NOT NULL DEFAULT 10,
+    FOREIGN KEY (dokter_id) REFERENCES dokter(id)
+);
+
+-- 5. Tabel Janji Temu
+CREATE TABLE janji_temu (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pasien_id INT,
+    jadwal_id INT,
+    tanggal DATE NOT NULL,
+    keluhan TEXT,
+    status ENUM('menunggu', 'diproses', 'selesai', 'batal') DEFAULT 'menunggu',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (pasien_id) REFERENCES pasien(id),
+    FOREIGN KEY (jadwal_id) REFERENCES jadwal(id)
+);
+
+-- 6. Tabel Rekam Medis
+CREATE TABLE rekam_medis (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    janji_temu_id INT,
+    diagnosa TEXT NOT NULL,
+    resep TEXT,
+    catatan TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (janji_temu_id) REFERENCES janji_temu(id)
+);
+
+-- 7. Insert Data Dokter
+INSERT INTO dokter (nama, spesialisasi, no_izin, telepon) VALUES 
+    ('Dr. Budi', 'Umum', 'DOK-001', '08123456789'),
+    ('Dr. Ani', 'Gigi', 'DOK-002', '08234567890'),
+    ('Dr. Rudi', 'Mata', 'DOK-003', '08345678901');
+
+-- 8. Insert Data Jadwal
+INSERT INTO jadwal (dokter_id, hari, jam_mulai, jam_selesai, kuota) VALUES 
+    (1, 'Senin', '09:00', '12:00', 10),
+    (1, 'Rabu', '13:00', '16:00', 10),
+    (2, 'Selasa', '09:00', '12:00', 8),
+    (3, 'Kamis', '13:00', '16:00', 8);
+
+-- 9. Query untuk Jadwal Dokter
+SELECT 
+    d.nama as dokter,
+    d.spesialisasi,
+    j.hari,
+    TIME_FORMAT(j.jam_mulai, '%H:%i') as jam_mulai,
+    TIME_FORMAT(j.jam_selesai, '%H:%i') as jam_selesai,
+    j.kuota - COUNT(jt.id) as sisa_kuota
+FROM dokter d
+JOIN jadwal j ON d.id = j.dokter_id
+LEFT JOIN janji_temu jt ON j.id = jt.jadwal_id 
+    AND jt.tanggal = CURDATE()
+GROUP BY d.id, d.nama, d.spesialisasi, j.hari, j.jam_mulai, j.jam_selesai, j.kuota;
+
+-- 10. Query untuk Statistik Kunjungan
+SELECT 
+    d.nama as dokter,
+    d.spesialisasi,
+    COUNT(jt.id) as total_kunjungan,
+    COUNT(CASE WHEN jt.status = 'selesai' THEN 1 END) as kunjungan_selesai,
+    COUNT(CASE WHEN jt.status = 'batal' THEN 1 END) as kunjungan_batal
+FROM dokter d
+LEFT JOIN jadwal j ON d.id = j.dokter_id
+LEFT JOIN janji_temu jt ON j.id = jt.jadwal_id
+WHERE jt.tanggal >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+GROUP BY d.id, d.nama, d.spesialisasi;
+
+-- 11. Query untuk Rekap Rekam Medis
+SELECT 
+    p.nama as pasien,
+    d.nama as dokter,
+    d.spesialisasi,
+    jt.tanggal,
+    rm.diagnosa,
+    rm.resep
+FROM rekam_medis rm
+JOIN janji_temu jt ON rm.janji_temu_id = jt.id
+JOIN pasien p ON jt.pasien_id = p.id
+JOIN jadwal j ON jt.jadwal_id = j.id
+JOIN dokter d ON j.dokter_id = d.id
+WHERE jt.tanggal >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+ORDER BY jt.tanggal DESC;
+```
+
+> 💡 **Tips Implementasi**: 
+> - Implementasikan validasi data di level aplikasi
+> - Gunakan transaksi untuk operasi yang kompleks
+> - Buat indeks untuk kolom yang sering dicari
+> - Implementasikan sistem antrian untuk janji temu
+> - Buat backup otomatis untuk data sensitif
+</details>
+
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+### 1.4 📝 Tips untuk Pemula
 
 1. **Gunakan Tools Visual**
    - MySQL Workbench untuk manajemen database
@@ -256,9 +677,11 @@
    - Cari solusi di Stack Overflow
    - Gunakan dokumentasi resmi MySQL
 
-## 📚 Panduan Belajar
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
-### 🎯 Level Pembelajaran
+## 2. 📚 Panduan Belajar
+
+### 2.1 🎯 Level Pembelajaran
 
 1. **Basic (Level 1-5)**
    - Tipe Data
@@ -289,7 +712,7 @@
    - Keamanan Database
    - Best Practices Pengembangan
 
-### 📋 Prasyarat Pembelajaran
+### 2.2 📋 Prasyarat Pembelajaran
 
 1. **Level Basic**
    - Pemahaman dasar database
@@ -311,7 +734,7 @@
    - Pemahaman sistem terdistribusi
    - Pengalaman dengan high availability
 
-### 🎮 Latihan Praktis
+### 2.3 🎮 Latihan Praktis
 
 1. **Level Basic**
    - Membuat database toko online sederhana
@@ -333,7 +756,7 @@
    - Mengatur high availability
    - Mengoptimasi keamanan database
 
-### 📝 Tips Belajar
+### 2.4 📝 Tips Belajar
 
 1. **Praktik Teratur**
    - Buat database dummy untuk latihan
@@ -355,7 +778,9 @@
    - Stack Overflow
    - GitHub discussions
 
-## 📋 1. Tipe Data
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 3. 📋 Tipe Data
 
 <details>
 <summary>🔢 Tipe Data Numerik</summary>
@@ -588,7 +1013,9 @@ CREATE TABLE example_bit (
 > - BIT untuk menyimpan flag atau permission
 </details>
 
-## 📌 2. Perintah Dasar
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 4. 📌 Perintah Dasar
 
 <details>
 <summary>🔌 Menghubungkan ke MySQL</summary>
@@ -776,7 +1203,9 @@ DROP DATABASE toko_online;
 > - Pastikan Anda memiliki backup sebelum menghapus database
 </details>
 
-## 📊 3. Operasi Tabel
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 5. 📊 Operasi Tabel
 
 <details>
 <summary>➕ Membuat Tabel</summary>
@@ -923,7 +1352,9 @@ DROP TABLE products;
 > - Pastikan Anda memiliki backup sebelum menghapus tabel
 </details>
 
-## 🔄 4. Operasi Data (CRUD)
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 6. 🔄 Operasi Data (CRUD)
 
 <details>
 <summary>➕ Insert Data</summary>
@@ -1104,7 +1535,9 @@ DELETE FROM categories WHERE id = 1;  -- Akan menghapus semua produk terkait
 > - TRUNCATE akan menghapus semua data dan mereset auto-increment
 </details>
 
-## 🔍 5. Query Lanjutan
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 7. 🔍 Query Lanjutan
 
 <details>
 <summary>🔗 Join Tabel</summary>
@@ -1235,7 +1668,9 @@ WHERE p.price > (
 > - Perhatikan performa saat menggunakan subquery
 </details>
 
-## 📊 6. Fungsi Agregasi
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 8. 📊 Fungsi Agregasi
 
 <details>
 <summary>📊 Fungsi Agregasi</summary>
@@ -1291,7 +1726,9 @@ GROUP BY category_id WITH ROLLUP;
 > - ROLLUP berguna untuk membuat subtotal
 </details>
 
-## 📅 7. Fungsi Tanggal dan Waktu
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 9. 📅 Fungsi Tanggal dan Waktu
 
 <details>
 <summary>📅 Fungsi Tanggal dan Waktu</summary>
@@ -1356,7 +1793,9 @@ SELECT EXTRACT(DAY FROM NOW());
 > - DATE_FORMAT sangat fleksibel untuk format tanggal
 </details>
 
-## 📝 8. Fungsi String
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 10. 📝 Fungsi String
 
 <details>
 <summary>📝 Fungsi String</summary>
@@ -1420,7 +1859,9 @@ SELECT ELT(1, 'First', 'Second', 'Third');
 > - SOUNDEX berguna untuk pencarian berdasarkan pengucapan
 </details>
 
-## 🔢 9. Fungsi Numerik
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 11. 🔢 Fungsi Numerik
 
 <details>
 <summary>🔢 Fungsi Numerik</summary>
@@ -1479,7 +1920,9 @@ SELECT RADIANS(180);
 > - RAND() berguna untuk mengambil sampel acak
 </details>
 
-## 📌 10. Indeks
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 12. 📌 Indeks
 
 <details>
 <summary>➕ Membuat Indeks</summary>
@@ -1521,7 +1964,9 @@ DROP INDEX idx_product_name ON products;
 > - Pastikan indeks yang dihapus tidak digunakan oleh constraint
 </details>
 
-## 💾 11. Backup dan Restore
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 13. 💾 Backup dan Restore
 
 <details>
 <summary>💾 Backup Database</summary>
@@ -1565,7 +2010,9 @@ gunzip < backup.sql.gz | mysql -u root -p toko_online
 > - Periksa ukuran file backup sebelum restore
 > - Gunakan transaksi untuk restore yang aman</details>
 
-## 🔧 12. Praktik Terbaik MySQL
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 14. 🔧 Praktik Terbaik MySQL
 
 <details>
 <summary>📋 Praktik Terbaik Desain Database</summary>
@@ -1820,7 +2267,9 @@ SHOW GLOBAL STATUS LIKE 'Created_tmp_%';
 > - Dokumentasikan semua perubahan
 </details>
 
-## 🔄 13. Replikasi MySQL
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 15. 🔄 Replikasi MySQL
 
 <details>
 <summary>🔄 Konfigurasi Replikasi</summary>
@@ -1913,7 +2362,9 @@ START SLAVE;
 > - Test failover secara berkala
 </details>
 
-## 🚀 14. High Availability
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 16. 🚀 High Availability
 
 <details>
 <summary>🔄 Konfigurasi High Availability</summary>
@@ -1998,7 +2449,9 @@ SELECT MAX(id) FROM table_name;
 > - Verifikasi integritas data setelah failover
 </details>
 
-## 📦 15. Migrasi Database
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 17. 📦 Migrasi Database
 
 <details>
 <summary>🔄 Prosedur Migrasi</summary>
@@ -2132,7 +2585,9 @@ ORDER BY data_free DESC;
 > - Optimasi tabel secara berkala
 </details>
 
-## 🛠️ 16. MySQL Workbench
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 18. 🛠️ MySQL Workbench
 
 <details>
 <summary>🔄 Penggunaan Dasar</summary>
@@ -2225,7 +2680,9 @@ CREATE TABLE users (
 > - Optimasi query dengan execution plan
 </details>
 
-## ⚡ 17. Optimasi Query
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 19. ⚡ Optimasi Query
 
 <details>
 <summary>🔄 Teknik Optimasi</summary>
@@ -2360,7 +2817,9 @@ FROM products;
 > - Gunakan CASE untuk logika kompleks
 </details>
 
-## 👥 18. Manajemen User dan Hak Akses
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 20. 👥 Manajemen User dan Hak Akses
 
 <details>
 <summary>🔄 Manajemen User</summary>
@@ -2453,7 +2912,9 @@ WITH ADMIN OPTION;
 > - Gunakan role untuk manajemen hak akses
 </details>
 
-## 🔒 19. Keamanan Database
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 21. 🔒 Keamanan Database
 
 <details>
 <summary>🔄 Praktik Keamanan</summary>
@@ -2546,7 +3007,9 @@ SHOW VARIABLES LIKE 'validate_password%';
 > - Verifikasi SSL
 </details>
 
-## 💻 20. Best Practices Pengembangan
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 22. 💻 Best Practices Pengembangan
 
 <details>
 <summary>🔄 Desain Database</summary>
@@ -2662,152 +3125,156 @@ GROUP BY c.id, c.name;
 > - Dokumentasikan kode
 </details>
 
-## 📚 22. Glosarium Istilah MySQL
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
-### 🔍 Cara Menggunakan Glosarium
+## 23. 📚 Glosarium Istilah MySQL
+
+### 23.1 🔍 Cara Menggunakan Glosarium
 1. Gunakan Ctrl+F untuk mencari istilah spesifik
 2. Pelajari istilah sesuai dengan level pembelajaran Anda
 3. Rujuk kembali ke bagian terkait untuk penjelasan detail
 4. Praktikkan penggunaan istilah dalam konteks yang benar
 
-### 1. Istilah Dasar
-- **Query**: Perintah atau instruksi yang diberikan ke database untuk melakukan operasi tertentu
-- **Database**: Kumpulan data yang terorganisir dan tersimpan secara sistematis
-- **Table**: Struktur untuk menyimpan data dalam bentuk baris dan kolom
-- **Column**: Bagian vertikal dari tabel yang menyimpan jenis data tertentu
-- **Row**: Bagian horizontal dari tabel yang menyimpan satu set data
+### 23.2 Istilah Dasar
+<details>
+<summary>Lihat Istilah Dasar</summary>
+
+#### A. Konsep Database
+- **Database**: Kumpulan data yang terorganisir dan terstruktur
+- **DBMS (Database Management System)**: Software untuk mengelola database
+- **RDBMS (Relational Database Management System)**: DBMS yang menggunakan model relasional
+- **Schema**: Struktur atau blueprint dari database
+- **Instance**: Satu instalasi database yang berjalan
+- **Connection**: Koneksi antara aplikasi dan database
+
+#### B. Struktur Data
+- **Table**: Struktur untuk menyimpan data dalam baris dan kolom
+- **Column**: Bagian vertikal dari tabel (field)
+- **Row**: Bagian horizontal dari tabel (record)
 - **Record**: Satu baris data dalam tabel
+- **Field**: Satu kolom dalam tabel
+- **Primary Key**: Kolom yang mengidentifikasi secara unik setiap baris
+- **Foreign Key**: Kolom yang mereferensi ke primary key tabel lain
+- **Index**: Struktur data untuk mempercepat pencarian
+- **Constraint**: Aturan yang membatasi data yang bisa disimpan
 
-### 2. Istilah Teknis
-- **Dummy Data**: Data contoh atau data palsu yang digunakan untuk testing
-- **Primary Key**: Kolom yang secara unik mengidentifikasi setiap baris dalam tabel
-- **Foreign Key**: Kolom yang merujuk ke primary key tabel lain
-- **Index**: Struktur data yang mempercepat pencarian data
-- **Constraint**: Aturan yang membatasi jenis data yang bisa disimpan
-- **Transaction**: Sekelompok operasi database yang dijalankan sebagai satu unit
-
-### 3. Istilah Operasi
-- **CRUD**: Create (Buat), Read (Baca), Update (Ubah), Delete (Hapus)
-- **SELECT**: Perintah untuk membaca data
-- **INSERT**: Perintah untuk menambah data
-- **UPDATE**: Perintah untuk mengubah data
-- **DELETE**: Perintah untuk menghapus data
-- **JOIN**: Menggabungkan data dari beberapa tabel
-
-### 4. Istilah Performa
-- **Optimization**: Proses meningkatkan performa database
+#### C. Operasi Dasar
+- **Query**: Perintah atau instruksi yang diberikan ke database
+- **CRUD**: Create, Read, Update, Delete - operasi dasar database
+- **Transaction**: Sekumpulan operasi yang harus dieksekusi bersama
+- **Commit**: Menyimpan perubahan transaksi secara permanen
+- **Rollback**: Membatalkan perubahan transaksi
 - **Backup**: Salinan data untuk keamanan
 - **Restore**: Mengembalikan data dari backup
-- **Replication**: Proses menyalin data ke server lain
-- **Cache**: Penyimpanan sementara untuk mempercepat akses data
 
-### 5. Istilah Keamanan
+#### D. Tipe Data
+- **VARCHAR**: Tipe data untuk teks dengan panjang variabel
+- **INT**: Tipe data untuk angka bulat
+- **DECIMAL**: Tipe data untuk angka desimal presisi
+- **DATE**: Tipe data untuk tanggal
+- **TIMESTAMP**: Tipe data untuk tanggal dan waktu
+- **BOOLEAN**: Tipe data untuk nilai true/false
+- **ENUM**: Tipe data untuk pilihan nilai tetap
+- **JSON**: Tipe data untuk menyimpan data JSON
+
+#### E. Perintah SQL
+- **SELECT**: Mengambil data dari tabel
+- **INSERT**: Menambah data ke tabel
+- **UPDATE**: Mengubah data dalam tabel
+- **DELETE**: Menghapus data dari tabel
+- **CREATE**: Membuat objek database baru
+- **ALTER**: Mengubah struktur objek database
+- **DROP**: Menghapus objek database
+- **TRUNCATE**: Menghapus semua data dalam tabel
+
+#### F. Relasi
+- **One-to-One**: Satu record di tabel A berhubungan dengan satu record di tabel B
+- **One-to-Many**: Satu record di tabel A berhubungan dengan banyak record di tabel B
+- **Many-to-Many**: Banyak record di tabel A berhubungan dengan banyak record di tabel B
+- **Join**: Menggabungkan data dari beberapa tabel
+- **Inner Join**: Mengambil data yang cocok di kedua tabel
+- **Left Join**: Mengambil semua data dari tabel kiri dan yang cocok dari tabel kanan
+- **Right Join**: Mengambil semua data dari tabel kanan dan yang cocok dari tabel kiri
+
+#### G. Optimasi
+- **Index**: Struktur data untuk mempercepat pencarian
+- **Query Optimization**: Proses meningkatkan performa query
+- **Execution Plan**: Rencana eksekusi query yang dibuat oleh database
+- **Cache**: Penyimpanan sementara untuk data yang sering diakses
+- **Buffer Pool**: Area memori untuk menyimpan data dan indeks
+- **Slow Query**: Query yang membutuhkan waktu eksekusi lama
+
+#### H. Keamanan
 - **User**: Pengguna database
-- **Password**: Kata sandi untuk autentikasi
-- **Privilege**: Hak akses pengguna
+- **Role**: Kumpulan hak akses
+- **Privilege**: Hak akses spesifik
+- **Authentication**: Proses verifikasi identitas
+- **Authorization**: Proses pemberian hak akses
 - **Encryption**: Proses mengamankan data
 - **Backup**: Salinan data untuk keamanan
+- **Audit**: Pencatatan aktivitas database
 
-### 6. Istilah Development
-- **Stored Procedure**: Kumpulan perintah SQL yang disimpan di database
-- **Trigger**: Kode yang dijalankan otomatis saat terjadi perubahan data
-- **View**: Tabel virtual yang dibuat dari hasil query
-- **Function**: Kode yang mengembalikan nilai
-- **Variable**: Tempat menyimpan nilai sementara
+#### I. Maintenance
+- **Backup**: Salinan data untuk keamanan
+- **Restore**: Mengembalikan data dari backup
+- **Optimize**: Mengoptimasi struktur tabel
+- **Analyze**: Menganalisis struktur tabel
+- **Repair**: Memperbaiki tabel yang rusak
+- **Check**: Memeriksa integritas tabel
+- **Vacuum**: Membersihkan ruang yang tidak terpakai
+- **Archive**: Menyimpan data lama
 
-### 7. Istilah Error
-- **Syntax Error**: Kesalahan dalam penulisan perintah
-- **Constraint Violation**: Pelanggaran aturan database
-- **Deadlock**: Kondisi ketika dua transaksi saling menunggu
-- **Timeout**: Waktu tunggu yang terlampaui
-- **Connection Error**: Masalah koneksi ke database
-
-### 8. Istilah Monitoring
-- **Log**: Catatan aktivitas database
+#### J. Monitoring
 - **Performance**: Kinerja database
-- **Resource**: Sumber daya yang digunakan
-- **Status**: Kondisi database
-- **Metric**: Ukuran performa database
+- **Throughput**: Jumlah operasi per detik
+- **Latency**: Waktu respons database
+- **Connection**: Koneksi aktif ke database
+- **Query**: Query yang sedang berjalan
+- **Lock**: Kunci pada data
+- **Deadlock**: Kondisi di mana dua transaksi saling menunggu
+- **Timeout**: Batas waktu eksekusi
+</details>
 
-### 9. Istilah Fungsi MySQL
-- **Aggregate Function**: Fungsi untuk menghitung nilai dari sekelompok baris (COUNT, SUM, AVG)
-- **String Function**: Fungsi untuk memanipulasi teks (CONCAT, SUBSTRING, REPLACE)
-- **Date Function**: Fungsi untuk menangani tanggal dan waktu (NOW, DATE_FORMAT, DATEDIFF)
-- **Numeric Function**: Fungsi untuk operasi matematika (ROUND, CEIL, FLOOR)
-- **Window Function**: Fungsi untuk analisis data berurutan (ROW_NUMBER, RANK, LAG)
+## 24. 📝 Catatan Penting
+<div align="center">
 
-### 10. Istilah Tipe Data
-- **Integer**: Tipe data untuk angka bulat (TINYINT, SMALLINT, INT, BIGINT)
-- **Decimal**: Tipe data untuk angka desimal (DECIMAL, FLOAT, DOUBLE)
-- **String**: Tipe data untuk teks (CHAR, VARCHAR, TEXT)
-- **Date/Time**: Tipe data untuk tanggal dan waktu (DATE, TIME, DATETIME, TIMESTAMP)
-- **Boolean**: Tipe data untuk nilai benar/salah (BOOLEAN, BOOL)
-- **JSON**: Tipe data untuk menyimpan data JSON
-- **BLOB**: Tipe data untuk menyimpan data biner besar
+| ⚠️ Perhatian | 📌 Catatan |
+|-------------|------------|
+| Update Berkala | Dokumen akan diperbarui secara rutin |
+| Kontribusi | Silakan berkontribusi untuk meningkatkan kualitas |
+| Issues | Laporkan kesalahan atau saran perbaikan |
+| Panduan | Ikuti panduan kontribusi untuk menambah konten |
 
-### 11. Istilah Join
-- **Inner Join**: Menggabungkan baris yang cocok di kedua tabel
-- **Left Join**: Menggabungkan semua baris dari tabel kiri dan baris yang cocok dari tabel kanan
-- **Right Join**: Menggabungkan semua baris dari tabel kanan dan baris yang cocok dari tabel kiri
-- **Full Join**: Menggabungkan semua baris dari kedua tabel
-- **Cross Join**: Menggabungkan setiap baris dari tabel pertama dengan setiap baris dari tabel kedua
-- **Self Join**: Menggabungkan tabel dengan dirinya sendiri
-
-### 12. Istilah Optimasi
-- **Query Plan**: Rencana eksekusi query yang dibuat oleh MySQL
-- **Index Scan**: Pencarian data menggunakan indeks
-- **Table Scan**: Pencarian data dengan membaca seluruh tabel
-- **Buffer Pool**: Area memori untuk menyimpan data dan indeks
-- **Query Cache**: Penyimpanan sementara untuk hasil query
-- **Slow Query**: Query yang membutuhkan waktu eksekusi lama
-- **Explain**: Perintah untuk melihat rencana eksekusi query
-
-### 13. Istilah Replikasi
-- **Master**: Server utama yang menangani write operations
-- **Slave**: Server cadangan yang menyalin data dari master
-- **Binary Log**: File yang mencatat perubahan data
-- **Relay Log**: File yang menyimpan perubahan dari master
-- **Replication Lag**: Keterlambatan sinkronisasi antara master dan slave
-- **GTID**: Global Transaction Identifier untuk identifikasi transaksi
-
-### 14. Istilah Backup
-- **Full Backup**: Backup seluruh database
-- **Incremental Backup**: Backup hanya data yang berubah
-- **Point-in-Time Recovery**: Pemulihan ke waktu tertentu
-- **Binary Log Backup**: Backup file binary log
-- **Hot Backup**: Backup saat database sedang berjalan
-- **Cold Backup**: Backup saat database dimatikan
-
-### 15. Istilah Keamanan Lanjutan
-- **SSL/TLS**: Protokol untuk mengenkripsi koneksi
-- **Role**: Kumpulan hak akses yang bisa diberikan ke user
-- **Audit Log**: Catatan aktivitas untuk keamanan
-- **Encryption at Rest**: Enkripsi data yang tersimpan
-- **Encryption in Transit**: Enkripsi data yang dikirim
-- **Password Policy**: Aturan untuk pembuatan password
-
-> 💡 **Tips**: 
-> - Pahami istilah-istilah ini untuk memudahkan pembelajaran
-> - Gunakan istilah yang tepat saat berkomunikasi dengan tim
-> - Dokumentasikan istilah baru yang Anda pelajari
-> - Praktikkan penggunaan istilah dalam konteks yang benar
-> - Pelajari istilah sesuai dengan level pembelajaran Anda
-
-## 📝 Catatan Penting
-- Dokumen ini akan diperbarui secara berkala
-- Silakan berkontribusi untuk meningkatkan kualitas dokumen
-- Laporkan kesalahan atau saran perbaikan melalui Issues
-- Ikuti panduan kontribusi untuk menambahkan konten baru
+</div>
 
 ## 🤝 Berkontribusi
-Kami menerima kontribusi untuk meningkatkan kualitas dokumen ini. Silakan:
-1. Fork repository
-2. Buat branch baru
-3. Tambahkan konten atau perbaikan
-4. Submit pull request
+<div align="center">
+
+| 📋 Langkah | 🎯 Tujuan |
+|-----------|-----------|
+| 1. Fork | Salin repository |
+| 2. Branch | Buat branch baru |
+| 3. Commit | Tambah konten/perbaikan |
+| 4. PR | Submit pull request |
+
+</div>
+
+<div align="center">
+  <img src="https://github-contributor-stats.vercel.app/api?username=yourusername" alt="Contributor Stats" />
+</div>
 
 ## 📄 Lisensi
-Dokumen ini dilisensikan di bawah [MIT License](LICENSE)
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
 
 ## 🙏 Terima Kasih
+<div align="center">
+
 Terima kasih telah menggunakan panduan ini. Semoga bermanfaat dalam perjalanan belajar MySQL Anda!
+
+</div>
+
+[⬆️ Kembali ke Daftar Isi](#-daftar-isi)
