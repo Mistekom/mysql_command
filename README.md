@@ -9,8 +9,8 @@
 [![MySQL Version](https://img.shields.io/badge/MySQL-8.0-blue)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Contributors](https://img.shields.io/badge/Contributors-Welcome-orange)](CONTRIBUTING.md)
-[![Stars](https://img.shields.io/github/stars/yourusername/mysql-guide?style=social)](https://github.com/yourusername/mysql-guide/stargazers)
-[![Forks](https://img.shields.io/github/forks/yourusername/mysql-guide?style=social)](https://github.com/yourusername/mysql-guide/network/members)
+[![Stars](https://img.shields.io/github/stars/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/stargazers)
+[![Forks](https://img.shields.io/github/forks/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/network/members)
 
 </div>
 
