@@ -1,4 +1,4 @@
-# 🗄️ Panduan Perintah MySQL
+# 🗄️ Panduan Lengkap MySQL
 
 <div align="center">
 
