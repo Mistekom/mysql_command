@@ -11,8 +11,23 @@
 [![Contributors](https://img.shields.io/badge/Contributors-Welcome-orange)](CONTRIBUTING.md)
 [![Stars](https://img.shields.io/github/stars/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/stargazers)
 [![Forks](https://img.shields.io/github/forks/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/network/members)
+[![Last Commit](https://img.shields.io/github/last-commit/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command/commits)
+[![Documentation](https://img.shields.io/badge/Documentation-Complete-brightgreen)](mysql_commands.md)
 
 </div>
+
+## 📋 Daftar Isi
+- [🗄️ Panduan Lengkap MySQL](#️-panduan-lengkap-mysql)
+  - [📋 Daftar Isi](#-daftar-isi)
+  - [📋 Fitur Utama](#-fitur-utama)
+  - [🎯 Target Pembaca](#-target-pembaca)
+  - [🚀 Quick Start](#-quick-start)
+  - [📚 Struktur Repository](#-struktur-repository)
+  - [🤝 Berkontribusi](#-berkontribusi)
+  - [📝 Lisensi](#-lisensi)
+  - [🙏 Terima Kasih](#-terima-kasih)
+  - [⭐ Support](#-support)
+  - [📫 Kontak](#-kontak)
 
 ## 📋 Fitur Utama
 - ✅ Panduan lengkap dari dasar hingga lanjutan
@@ -32,23 +47,17 @@
 - 👨‍🔧 System administrator
 
 ## 🚀 Quick Start
-1. **Baca Online**: 
-   - [📖 Panduan MySQL](mysql_commands.md) - Panduan lengkap MySQL
-   - [📚 Glosarium](mysql_commands.md#-22-glosarium-istilah-mysql) - Istilah-istilah MySQL
-   - [🎯 Contoh Kasus](mysql_commands.md#-contoh-kasus-sederhana) - Contoh penggunaan MySQL
-
-2. **Clone Repository** (opsional):
-```bash
-git clone https://github.com/yourusername/mysql-guide.git
-```
+- [📖 Panduan MySQL](mysql_commands.md) - Panduan lengkap MySQL
+- [📚 Glosarium](mysql_commands.md#-22-glosarium-istilah-mysql) - Istilah-istilah MySQL
+- [🎯 Contoh Kasus](mysql_commands.md#-contoh-kasus-sederhana) - Contoh penggunaan MySQL
 
 ## 📚 Struktur Repository
 ```
 mysql-guide/
-├── mysql_commands.md    # Panduan utama MySQL
 ├── CONTRIBUTING.md     # Panduan kontribusi
 ├── LICENSE            # Lisensi
-└── README.md         # File ini
+├── README.md         # File ini
+└── mysql_commands.md    # Panduan utama MySQL
 ```
 
 ## 🤝 Berkontribusi
@@ -82,4 +91,6 @@ Jika Anda menyukai proyek ini, jangan lupa untuk:
 
 <div align="center">
 Made with ❤️ by Mistekom
+
+[⬆️ Kembali ke atas](#-panduan-lengkap-mysql)
 </div> 
