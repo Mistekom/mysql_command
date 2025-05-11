@@ -259,9 +259,28 @@ graph TD
       - [I. Maintenance](#i-maintenance)
       - [J. Monitoring](#j-monitoring)
   - [24. 📝 Catatan Penting](#24--catatan-penting)
-  - [🤝 Berkontribusi](#-berkontribusi)
-  - [📄 Lisensi](#-lisensi)
-  - [🙏 Terima Kasih](#-terima-kasih)
+  - [25. 🔄 Migrasi dan Upgrade MySQL](#25--migrasi-dan-upgrade-mysql)
+    - [25.1 Migrasi dari Versi Lama](#251-migrasi-dari-versi-lama)
+    - [25.2 Upgrade MySQL](#252-upgrade-mysql)
+  - [26. 📊 Monitoring dan Performance Tuning](#26--monitoring-dan-performance-tuning)
+    - [26.1 Monitoring Tools](#261-monitoring-tools)
+    - [26.2 Performance Tuning](#262-performance-tuning)
+  - [27. 🔍 Troubleshooting Lanjutan](#27--troubleshooting-lanjutan)
+    - [27.1 Masalah Umum dan Solusi](#271-masalah-umum-dan-solusi)
+    - [27.2 Logging dan Debugging](#272-logging-dan-debugging)
+  - [28. 🛠️ Tools dan Utilitas MySQL](#28-️-tools-dan-utilitas-mysql)
+    - [28.1 MySQL Workbench](#281-mysql-workbench)
+    - [28.2 phpMyAdmin](#282-phpmyadmin)
+    - [28.3 MySQL Shell](#283-mysql-shell)
+    - [28.4 MySQL Utilities](#284-mysql-utilities)
+  - [29. 📚 Referensi dan Sumber Belajar](#29--referensi-dan-sumber-belajar)
+    - [29.1 Dokumentasi Resmi](#291-dokumentasi-resmi)
+    - [29.2 Komunitas dan Forum](#292-komunitas-dan-forum)
+    - [29.3 Tutorial dan Kursus](#293-tutorial-dan-kursus)
+    - [29.4 Buku Rekomendasi](#294-buku-rekomendasi)
+  - [30. 🔄 Update dan Maintenance](#30--update-dan-maintenance)
+    - [30.1 Jadwal Maintenance](#301-jadwal-maintenance)
+    - [30.2 Update Security](#302-update-security)
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
@@ -3136,104 +3155,101 @@ GROUP BY c.id, c.name;
 4. Praktikkan penggunaan istilah dalam konteks yang benar
 
 ### 23.2 Istilah Dasar
-<details>
-<summary>Lihat Istilah Dasar</summary>
 
 #### A. Konsep Database
-- **Database**: Kumpulan data yang terorganisir dan terstruktur
-- **DBMS (Database Management System)**: Software untuk mengelola database
-- **RDBMS (Relational Database Management System)**: DBMS yang menggunakan model relasional
-- **Schema**: Struktur atau blueprint dari database
-- **Instance**: Satu instalasi database yang berjalan
-- **Connection**: Koneksi antara aplikasi dan database
+- **Database**: Kumpulan data yang terorganisir dan terstruktur.
+- **DBMS (Database Management System)**: Perangkat lunak untuk mengelola database.
+- **RDBMS (Relational Database Management System)**: DBMS yang menggunakan model relasional.
+- **Schema**: Struktur atau blueprint dari database.
+- **Instance**: Satu instalasi database yang berjalan.
+- **Connection**: Koneksi antara aplikasi dan database.
 
 #### B. Struktur Data
-- **Table**: Struktur untuk menyimpan data dalam baris dan kolom
-- **Column**: Bagian vertikal dari tabel (field)
-- **Row**: Bagian horizontal dari tabel (record)
-- **Record**: Satu baris data dalam tabel
-- **Field**: Satu kolom dalam tabel
-- **Primary Key**: Kolom yang mengidentifikasi secara unik setiap baris
-- **Foreign Key**: Kolom yang mereferensi ke primary key tabel lain
-- **Index**: Struktur data untuk mempercepat pencarian
-- **Constraint**: Aturan yang membatasi data yang bisa disimpan
+- **Table**: Struktur untuk menyimpan data dalam baris dan kolom.
+- **Column**: Bagian vertikal dari tabel (field).
+- **Row**: Bagian horizontal dari tabel (record).
+- **Record**: Satu baris data dalam tabel.
+- **Field**: Satu kolom dalam tabel.
+- **Primary Key**: Kolom yang mengidentifikasi secara unik setiap baris.
+- **Foreign Key**: Kolom yang mereferensi ke primary key tabel lain.
+- **Index**: Struktur data untuk mempercepat pencarian.
+- **Constraint**: Aturan yang membatasi data yang bisa disimpan.
 
 #### C. Operasi Dasar
-- **Query**: Perintah atau instruksi yang diberikan ke database
-- **CRUD**: Create, Read, Update, Delete - operasi dasar database
-- **Transaction**: Sekumpulan operasi yang harus dieksekusi bersama
-- **Commit**: Menyimpan perubahan transaksi secara permanen
-- **Rollback**: Membatalkan perubahan transaksi
-- **Backup**: Salinan data untuk keamanan
-- **Restore**: Mengembalikan data dari backup
+- **Query**: Perintah atau instruksi yang diberikan ke database.
+- **CRUD**: Create, Read, Update, Delete - operasi dasar database.
+- **Transaction**: Sekumpulan operasi yang harus dieksekusi bersama.
+- **Commit**: Menyimpan perubahan transaksi secara permanen.
+- **Rollback**: Membatalkan perubahan transaksi.
+- **Backup**: Salinan data untuk keamanan.
+- **Restore**: Mengembalikan data dari backup.
 
 #### D. Tipe Data
-- **VARCHAR**: Tipe data untuk teks dengan panjang variabel
-- **INT**: Tipe data untuk angka bulat
-- **DECIMAL**: Tipe data untuk angka desimal presisi
-- **DATE**: Tipe data untuk tanggal
-- **TIMESTAMP**: Tipe data untuk tanggal dan waktu
-- **BOOLEAN**: Tipe data untuk nilai true/false
-- **ENUM**: Tipe data untuk pilihan nilai tetap
-- **JSON**: Tipe data untuk menyimpan data JSON
+- **VARCHAR**: Tipe data untuk teks dengan panjang variabel.
+- **INT**: Tipe data untuk angka bulat.
+- **DECIMAL**: Tipe data untuk angka desimal presisi.
+- **DATE**: Tipe data untuk tanggal.
+- **TIMESTAMP**: Tipe data untuk tanggal dan waktu.
+- **BOOLEAN**: Tipe data untuk nilai true/false.
+- **ENUM**: Tipe data untuk pilihan nilai tetap.
+- **JSON**: Tipe data untuk menyimpan data JSON.
 
 #### E. Perintah SQL
-- **SELECT**: Mengambil data dari tabel
-- **INSERT**: Menambah data ke tabel
-- **UPDATE**: Mengubah data dalam tabel
-- **DELETE**: Menghapus data dari tabel
-- **CREATE**: Membuat objek database baru
-- **ALTER**: Mengubah struktur objek database
-- **DROP**: Menghapus objek database
-- **TRUNCATE**: Menghapus semua data dalam tabel
+- **SELECT**: Mengambil data dari tabel.
+- **INSERT**: Menambah data ke tabel.
+- **UPDATE**: Mengubah data dalam tabel.
+- **DELETE**: Menghapus data dari tabel.
+- **CREATE**: Membuat objek database baru.
+- **ALTER**: Mengubah struktur objek database.
+- **DROP**: Menghapus objek database.
+- **TRUNCATE**: Menghapus semua data dalam tabel.
 
 #### F. Relasi
-- **One-to-One**: Satu record di tabel A berhubungan dengan satu record di tabel B
-- **One-to-Many**: Satu record di tabel A berhubungan dengan banyak record di tabel B
-- **Many-to-Many**: Banyak record di tabel A berhubungan dengan banyak record di tabel B
-- **Join**: Menggabungkan data dari beberapa tabel
-- **Inner Join**: Mengambil data yang cocok di kedua tabel
-- **Left Join**: Mengambil semua data dari tabel kiri dan yang cocok dari tabel kanan
-- **Right Join**: Mengambil semua data dari tabel kanan dan yang cocok dari tabel kiri
+- **One-to-One**: Satu record di tabel A berhubungan dengan satu record di tabel B.
+- **One-to-Many**: Satu record di tabel A berhubungan dengan banyak record di tabel B.
+- **Many-to-Many**: Banyak record di tabel A berhubungan dengan banyak record di tabel B.
+- **Join**: Menggabungkan data dari beberapa tabel.
+- **Inner Join**: Mengambil data yang cocok di kedua tabel.
+- **Left Join**: Mengambil semua data dari tabel kiri dan yang cocok dari tabel kanan.
+- **Right Join**: Mengambil semua data dari tabel kanan dan yang cocok dari tabel kiri.
 
 #### G. Optimasi
-- **Index**: Struktur data untuk mempercepat pencarian
-- **Query Optimization**: Proses meningkatkan performa query
-- **Execution Plan**: Rencana eksekusi query yang dibuat oleh database
-- **Cache**: Penyimpanan sementara untuk data yang sering diakses
-- **Buffer Pool**: Area memori untuk menyimpan data dan indeks
-- **Slow Query**: Query yang membutuhkan waktu eksekusi lama
+- **Index**: Struktur data untuk mempercepat pencarian.
+- **Query Optimization**: Proses meningkatkan performa query.
+- **Execution Plan**: Rencana eksekusi query yang dibuat oleh database.
+- **Cache**: Penyimpanan sementara untuk data yang sering diakses.
+- **Buffer Pool**: Area memori untuk menyimpan data dan indeks.
+- **Slow Query**: Query yang membutuhkan waktu eksekusi lama.
 
 #### H. Keamanan
-- **User**: Pengguna database
-- **Role**: Kumpulan hak akses
-- **Privilege**: Hak akses spesifik
-- **Authentication**: Proses verifikasi identitas
-- **Authorization**: Proses pemberian hak akses
-- **Encryption**: Proses mengamankan data
-- **Backup**: Salinan data untuk keamanan
-- **Audit**: Pencatatan aktivitas database
+- **User**: Pengguna database.
+- **Role**: Kumpulan hak akses.
+- **Privilege**: Hak akses spesifik.
+- **Authentication**: Proses verifikasi identitas.
+- **Authorization**: Proses pemberian hak akses.
+- **Encryption**: Proses mengamankan data.
+- **Backup**: Salinan data untuk keamanan.
+- **Audit**: Pencatatan aktivitas database.
 
 #### I. Maintenance
-- **Backup**: Salinan data untuk keamanan
-- **Restore**: Mengembalikan data dari backup
-- **Optimize**: Mengoptimasi struktur tabel
-- **Analyze**: Menganalisis struktur tabel
-- **Repair**: Memperbaiki tabel yang rusak
-- **Check**: Memeriksa integritas tabel
-- **Vacuum**: Membersihkan ruang yang tidak terpakai
-- **Archive**: Menyimpan data lama
+- **Backup**: Salinan data untuk keamanan.
+- **Restore**: Mengembalikan data dari backup.
+- **Optimize**: Mengoptimasi struktur tabel.
+- **Analyze**: Menganalisis struktur tabel.
+- **Repair**: Memperbaiki tabel yang rusak.
+- **Check**: Memeriksa integritas tabel.
+- **Vacuum**: Membersihkan ruang yang tidak terpakai.
+- **Archive**: Menyimpan data lama.
 
 #### J. Monitoring
-- **Performance**: Kinerja database
-- **Throughput**: Jumlah operasi per detik
-- **Latency**: Waktu respons database
-- **Connection**: Koneksi aktif ke database
-- **Query**: Query yang sedang berjalan
-- **Lock**: Kunci pada data
-- **Deadlock**: Kondisi di mana dua transaksi saling menunggu
-- **Timeout**: Batas waktu eksekusi
-</details>
+- **Performance**: Kinerja database.
+- **Throughput**: Jumlah operasi per detik.
+- **Latency**: Waktu respons database.
+- **Connection**: Koneksi aktif ke database.
+- **Query**: Query yang sedang berjalan.
+- **Lock**: Kunci pada data.
+- **Deadlock**: Kondisi di mana dua transaksi saling menunggu.
+- **Timeout**: Batas waktu eksekusi.
 
 ## 24. 📝 Catatan Penting
 <div align="center">
@@ -3278,3 +3294,223 @@ Terima kasih telah menggunakan panduan ini. Semoga bermanfaat dalam perjalanan b
 </div>
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+## 25. 🔄 Migrasi dan Upgrade MySQL
+
+### 25.1 Migrasi dari Versi Lama
+```sql
+-- 1. Backup Database
+mysqldump -u root -p --all-databases > backup.sql
+
+-- 2. Export Data
+mysqldump -u root -p database_name > data.sql
+
+-- 3. Import ke Versi Baru
+mysql -u root -p database_name < data.sql
+
+-- 4. Verifikasi Data
+SELECT COUNT(*) FROM table_name;
+```
+
+### 25.2 Upgrade MySQL
+```bash
+# 1. Backup Data
+mysqldump -u root -p --all-databases > backup.sql
+
+# 2. Stop MySQL Service
+sudo systemctl stop mysql
+
+# 3. Update MySQL
+sudo apt update
+sudo apt upgrade mysql-server
+
+# 4. Start MySQL Service
+sudo systemctl start mysql
+
+# 5. Verifikasi Versi
+mysql -V
+```
+
+## 26. 📊 Monitoring dan Performance Tuning
+
+### 26.1 Monitoring Tools
+```sql
+-- 1. Status Server
+SHOW STATUS;
+SHOW VARIABLES;
+
+-- 2. Process List
+SHOW PROCESSLIST;
+
+-- 3. InnoDB Status
+SHOW ENGINE INNODB STATUS;
+
+-- 4. Table Statistics
+SHOW TABLE STATUS;
+
+-- 5. User Statistics
+SHOW USER_STATISTICS;
+```
+
+### 26.2 Performance Tuning
+```sql
+-- 1. Optimasi Query
+EXPLAIN SELECT * FROM table_name WHERE condition;
+
+-- 2. Analisis Tabel
+ANALYZE TABLE table_name;
+
+-- 3. Optimasi Tabel
+OPTIMIZE TABLE table_name;
+
+-- 4. Periksa Indeks
+SHOW INDEX FROM table_name;
+
+-- 5. Periksa Status Buffer
+SHOW STATUS LIKE 'Innodb_buffer_pool_%';
+```
+
+## 27. 🔍 Troubleshooting Lanjutan
+
+### 27.1 Masalah Umum dan Solusi
+```sql
+-- 1. Error "Table is Full"
+-- Solusi: Periksa disk space dan max_heap_table_size
+SHOW VARIABLES LIKE 'max_heap_table_size';
+SHOW VARIABLES LIKE 'tmp_table_size';
+
+-- 2. Error "Too Many Connections"
+-- Solusi: Periksa max_connections
+SHOW VARIABLES LIKE 'max_connections';
+SHOW STATUS LIKE 'Threads_connected';
+
+-- 3. Error "Lock Wait Timeout"
+-- Solusi: Periksa transaksi yang berjalan lama
+SHOW PROCESSLIST;
+SHOW ENGINE INNODB STATUS;
+
+-- 4. Error "Disk Full"
+-- Solusi: Periksa penggunaan disk
+SELECT 
+    table_schema as Database,
+    table_name as Table,
+    round(((data_length + index_length) / 1024 / 1024), 2) as Size_MB
+FROM information_schema.TABLES
+ORDER BY (data_length + index_length) DESC;
+```
+
+### 27.2 Logging dan Debugging
+```sql
+-- 1. Error Log
+SHOW VARIABLES LIKE 'log_error';
+
+-- 2. Slow Query Log
+SHOW VARIABLES LIKE 'slow_query_log';
+SHOW VARIABLES LIKE 'long_query_time';
+
+-- 3. General Log
+SHOW VARIABLES LIKE 'general_log';
+
+-- 4. Binary Log
+SHOW BINARY LOGS;
+SHOW MASTER STATUS;
+```
+
+## 28. 🛠️ Tools dan Utilitas MySQL
+
+### 28.1 MySQL Workbench
+- Database Design & Modeling
+- SQL Development
+- Database Administration
+- Data Migration
+- Server Monitoring
+
+### 28.2 phpMyAdmin
+- Web-based Management
+- User Management
+- Database Operations
+- Import/Export
+- Query Builder
+
+### 28.3 MySQL Shell
+```bash
+# 1. Install MySQL Shell
+sudo apt install mysql-shell
+
+# 2. Connect ke MySQL
+mysqlsh -u root -p
+
+# 3. Perintah Dasar
+\sql
+\js
+\py
+\help
+```
+
+### 28.4 MySQL Utilities
+```bash
+# 1. Install MySQL Utilities
+sudo apt install mysql-utilities
+
+# 2. Perintah Umum
+mysqladmin
+mysqlcheck
+mysqldump
+mysqlimport
+```
+
+## 29. 📚 Referensi dan Sumber Belajar
+
+### 29.1 Dokumentasi Resmi
+- [MySQL Documentation](https://dev.mysql.com/doc/)
+- [MySQL Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
+- [MySQL Workbench Manual](https://dev.mysql.com/doc/workbench/en/)
+
+### 29.2 Komunitas dan Forum
+- [MySQL Forums](https://forums.mysql.com/)
+- [Stack Overflow MySQL](https://stackoverflow.com/questions/tagged/mysql)
+- [MySQL Community](https://www.mysql.com/community/)
+
+### 29.3 Tutorial dan Kursus
+- [MySQL Tutorial](https://www.mysqltutorial.org/)
+- [W3Schools MySQL](https://www.w3schools.com/mysql/)
+- [MySQL Course on Udemy](https://www.udemy.com/topic/mysql/)
+
+### 29.4 Buku Rekomendasi
+- "MySQL 8.0 Reference Manual"
+- "High Performance MySQL"
+- "MySQL Cookbook"
+- "Learning MySQL"
+
+## 30. 🔄 Update dan Maintenance
+
+### 30.1 Jadwal Maintenance
+```sql
+-- 1. Optimasi Tabel Rutin
+OPTIMIZE TABLE table_name;
+
+-- 2. Analisis Tabel Rutin
+ANALYZE TABLE table_name;
+
+-- 3. Periksa dan Perbaiki Tabel
+CHECK TABLE table_name;
+REPAIR TABLE table_name;
+
+-- 4. Backup Rutin
+-- Gunakan cron job untuk backup otomatis
+```
+
+### 30.2 Update Security
+```sql
+-- 1. Update Password User
+ALTER USER 'user'@'localhost' IDENTIFIED BY 'new_password';
+
+-- 2. Review Hak Akses
+SHOW GRANTS FOR 'user'@'localhost';
+
+-- 3. Audit User
+SELECT * FROM mysql.user;
+
+-- 4. Hapus User Tidak Terpakai
+DROP USER 'unused_user'@'localhost';
+```
