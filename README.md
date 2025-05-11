@@ -22,7 +22,7 @@
 </div>
 
 ## 📋 Daftar Isi
-- [🗄️ Panduan Lengkap MySQL](#️-panduan-lengkap-mysql)
+- [🗄️ Panduan Lengkap MySQL](mysql_commands.md)
   - [📋 Daftar Isi](#-daftar-isi)
   - [📋 Fitur Utama](#-fitur-utama)
   - [🎯 Target Pembaca](#-target-pembaca)
@@ -77,46 +77,37 @@
 ### 🎯 Level Pembelajaran
 
 | Level | Topik | Link |
-|-------|-------|------|
-| 🟢 Basic | Tipe Data, Perintah Dasar, CRUD | [Mulai Belajar](mysql_commands.md#3--tipe-data) |
-| 🟡 Intermediate | Query Lanjutan, Fungsi, Indeks | [Lanjutkan](mysql_commands.md#7--query-lanjutan) |
-| 🟠 Advanced | Backup, Replikasi, HA | [Tingkatkan](mysql_commands.md#13--backup-dan-restore) |
-| 🔴 Expert | Optimasi, Keamanan, Best Practices | [Master](mysql_commands.md#19--optimasi-query) |
+|:-----:|:-----:|:----:|
+| 🟢 **Basic** | • Tipe Data<br>• Perintah Dasar<br>• CRUD | [Mulai Belajar](mysql_commands.md#3--tipe-data) |
+| 🟡 **Intermediate** | • Query Lanjutan<br>• Fungsi<br>• Indeks | [Lanjutkan](mysql_commands.md#7--query-lanjutan) |
+| 🟠 **Advanced** | • Backup<br>• Replikasi<br>• High Availability | [Tingkatkan](mysql_commands.md#13--backup-dan-restore) |
+| 🔴 **Expert** | • Optimasi<br>• Keamanan<br>• Best Practices | [Master](mysql_commands.md#19--optimasi-query) |
 
 ### 📋 Materi Per Topik
 
 | Kategori | Materi | Link |
-|----------|--------|------|
-| 📊 Database | Tipe Data, Tabel, Indeks | [Pelajari](mysql_commands.md#3--tipe-data) |
-| 🔄 Operasi | CRUD, Query, Join | [Pelajari](mysql_commands.md#6--operasi-data-crud) |
-| 📈 Fungsi | Agregasi, Tanggal, String | [Pelajari](mysql_commands.md#8--fungsi-agregasi) |
-| 🔒 Keamanan | User, Hak Akses, Enkripsi | [Pelajari](mysql_commands.md#21--keamanan-database) |
-| 🛠️ Tools | Workbench, Shell, Utilities | [Pelajari](mysql_commands.md#27-️-tools-dan-utilitas-mysql) |
+|:--------:|:------:|:----:|
+| 📊 **Database** | • Tipe Data<br>• Tabel<br>• Indeks | [Pelajari](mysql_commands.md#3--tipe-data) |
+| 🔄 **Operasi** | • CRUD<br>• Query<br>• Join | [Pelajari](mysql_commands.md#6--operasi-data-crud) |
+| 📈 **Fungsi** | • Agregasi<br>• Tanggal<br>• String | [Pelajari](mysql_commands.md#8--fungsi-agregasi) |
+| 🔒 **Keamanan** | • User<br>• Hak Akses<br>• Enkripsi | [Pelajari](mysql_commands.md#21--keamanan-database) |
+| 🛠️ **Tools** | • Workbench<br>• Shell<br>• Utilities | [Pelajari](mysql_commands.md#27-️-tools-dan-utilitas-mysql) |
 
 ### 🎮 Latihan Praktis
 
 | Jenis | Deskripsi | Link |
-|-------|-----------|------|
-| 📱 Toko Online | Sistem manajemen toko online | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
-| 🏥 Klinik | Sistem manajemen klinik | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
-| 📊 Laporan | Query untuk laporan | [Lihat Contoh](mysql_commands.md#8--fungsi-agregasi) |
+|:-----:|:---------:|:----:|
+| 📱 **Toko Online** | Sistem manajemen toko online dengan fitur produk, kategori, dan laporan penjualan | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
+| 🏥 **Klinik** | Sistem manajemen klinik dengan fitur jadwal dokter, rekam medis, dan laporan kunjungan | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
+| 📊 **Laporan** | Query untuk analisis data dan pembuatan laporan | [Lihat Contoh](mysql_commands.md#8--fungsi-agregasi) |
 
 ### 📝 Tips Belajar
 
-1. **Mulai dari Dasar**
-   - Pelajari [Tipe Data](mysql_commands.md#3--tipe-data) dan [Perintah Dasar](mysql_commands.md#4--perintah-dasar)
-   - Pahami konsep [CRUD](mysql_commands.md#6--operasi-data-crud)
-   - Praktikkan dengan [Contoh Kasus](mysql_commands.md#13--contoh-kasus-sederhana)
-
-2. **Tingkatkan Skill**
-   - Pelajari [Query Lanjutan](mysql_commands.md#7--query-lanjutan)
-   - Kuasai [Fungsi-fungsi](mysql_commands.md#8--fungsi-agregasi)
-   - Pahami [Indeks](mysql_commands.md#12--indeks)
-
-3. **Menjadi Expert**
-   - Pelajari [Optimasi](mysql_commands.md#19--optimasi-query)
-   - Kuasai [Keamanan](mysql_commands.md#21--keamanan-database)
-   - Pahami [Best Practices](mysql_commands.md#22--best-practices-pengembangan)
+| Level | Tips | Link |
+|:------|:-----|:----:|
+| 🟢 **Pemula** | • Pelajari [Tipe Data](mysql_commands.md#3--tipe-data) dan [Perintah Dasar](mysql_commands.md#4--perintah-dasar)<br>• Pahami konsep [CRUD](mysql_commands.md#6--operasi-data-crud)<br>• Praktikkan dengan [Contoh Kasus](mysql_commands.md#13--contoh-kasus-sederhana) | [Mulai Belajar](mysql_commands.md#3--tipe-data) |
+| 🟡 **Menengah** | • Pelajari [Query Lanjutan](mysql_commands.md#7--query-lanjutan)<br>• Kuasai [Fungsi-fungsi](mysql_commands.md#8--fungsi-agregasi)<br>• Pahami [Indeks](mysql_commands.md#12--indeks) | [Lanjutkan](mysql_commands.md#7--query-lanjutan) |
+| 🔴 **Lanjutan** | • Pelajari [Optimasi](mysql_commands.md#19--optimasi-query)<br>• Kuasai [Keamanan](mysql_commands.md#21--keamanan-database)<br>• Pahami [Best Practices](mysql_commands.md#22--best-practices-pengembangan) | [Tingkatkan](mysql_commands.md#19--optimasi-query) |
 
 </div>
 
