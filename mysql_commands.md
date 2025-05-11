@@ -149,6 +149,8 @@
 ## ⚠️ Common Mistakes & Solusinya
 
 1. **Lupa Password Root**
+   
+   **Linux:**
    ```bash
    # Solusi:
    sudo systemctl stop mysql
@@ -156,6 +158,46 @@
    mysql -u root
    ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
    ```
+   
+   **Windows (8/10/11):**
+   ```cmd
+   :: 1. Stop service MySQL
+   net stop mysql
+   :: Jika servicenya MySQL80, gunakan: net stop MySQL80
+
+   :: 2. Jalankan MySQL tanpa password (skip grant tables)
+   mysqld --skip-grant-tables
+   :: (Biarkan jendela ini terbuka)
+
+   :: 3. Buka Command Prompt baru, login tanpa password
+   mysql -u root
+
+   :: 4. Ganti password root
+   FLUSH PRIVILEGES;
+   ALTER USER 'root'@'localhost' IDENTIFIED BY 'password_baru_anda';
+   -- Jika error, coba:
+   -- SET PASSWORD FOR 'root'@'localhost' = PASSWORD('password_baru_anda');
+
+   :: 5. Stop MySQL yang berjalan tanpa password (Ctrl+C di jendela pertama)
+
+   :: 6. Start ulang service MySQL
+   net start mysql
+   :: Atau: net start MySQL80
+
+   :: 7. Login dengan password baru
+   mysql -u root -p
+   ```
+   > 💡 **Tips Windows**:
+   > - Jalankan Command Prompt sebagai Administrator.
+   > - Cek nama service di "Services" jika perintah net stop mysql gagal.
+   > - Jangan biarkan mode --skip-grant-tables terlalu lama (tidak aman).
+   > - Untuk MySQL 8+, gunakan ALTER USER, bukan SET PASSWORD.
+   > - Jika pakai XAMPP, gunakan Control Panel XAMPP untuk stop/start service.
+   >
+   > **Catatan untuk Pengguna MySQL Workbench:**
+   > - Anda **tidak bisa** reset password root langsung dari MySQL Workbench jika sudah lupa password.
+   > - Lakukan reset password lewat command line seperti langkah di atas.
+   > - Setelah password berhasil di-reset, barulah Anda bisa login kembali ke MySQL Workbench dengan password baru.
 
 2. **Error "Access Denied"**
    - Pastikan username dan password benar
