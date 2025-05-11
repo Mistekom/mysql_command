@@ -1,4 +1,4 @@
-# 🗄️ Panduan Lengkap MySQL
+# 🗄️ [Panduan Lengkap MySQL](mysql_commands.md)
 
 <div align="center">
 
@@ -22,7 +22,7 @@
 </div>
 
 ## 📋 Daftar Isi
-- [🗄️ Panduan Lengkap MySQL](mysql_commands.md)
+- [🗄️ Panduan Lengkap MySQL](#️-panduan-lengkap-mysql)
   - [📋 Daftar Isi](#-daftar-isi)
   - [📋 Fitur Utama](#-fitur-utama)
   - [🎯 Target Pembaca](#-target-pembaca)
@@ -53,12 +53,17 @@
 - 👨‍🔧 System administrator
 
 ## 🚀 Quick Start
-- [📖 Panduan MySQL](mysql_commands.md) - Panduan lengkap MySQL
-- [📚 Glosarium](mysql_commands.md#23--glosarium-istilah-mysql) - Istilah-istilah MySQL
-- [🎯 Contoh Kasus](mysql_commands.md#13--contoh-kasus-sederhana) - Contoh penggunaan MySQL
-- [🔧 Troubleshooting](mysql_commands.md#26--troubleshooting-lanjutan) - Solusi masalah umum
-- [📊 Monitoring](mysql_commands.md#25--monitoring-dan-performance-tuning) - Monitoring dan tuning
-- [🔒 Keamanan](mysql_commands.md#21--keamanan-database) - Praktik keamanan database
+
+<div align="center">
+
+[![Panduan MySQL](https://img.shields.io/badge/📖-Panduan_MySQL-blue)](mysql_commands.md)
+[![Glosarium](https://img.shields.io/badge/📚-Glosarium-green)](mysql_commands.md#23--glosarium-istilah-mysql)
+[![Contoh Kasus](https://img.shields.io/badge/🎯-Contoh_Kasus-orange)](mysql_commands.md#13--contoh-kasus-sederhana)
+[![Troubleshooting](https://img.shields.io/badge/🔧-Troubleshooting-red)](mysql_commands.md#26--troubleshooting-lanjutan)
+[![Monitoring](https://img.shields.io/badge/📊-Monitoring-purple)](mysql_commands.md#25--monitoring-dan-performance-tuning)
+[![Keamanan](https://img.shields.io/badge/🔒-Keamanan-yellow)](mysql_commands.md#21--keamanan-database)
+
+</div>
 
 ## 📚 Struktur Repository
 ```
