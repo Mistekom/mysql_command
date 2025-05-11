@@ -1,10 +1,23 @@
 # 🗄️ [Panduan Lengkap MySQL](mysql_commands.md)
 
 <div align="center">
+<pre>
+  ███╗   ███╗██╗   ██╗███████╗ ██████╗ ██╗     
+  ████╗ ████║╚██╗ ██╔╝██╔════╝██╔═══██╗██║     
+  ██╔████╔██║ ╚████╔╝ ███████╗██║   ██║██║     
+  ██║╚██╔╝██║  ╚██╔╝  ╚════██║██║   ██║██║     
+  ██║ ╚═╝ ██║   ██║   ███████║╚██████╔╝███████╗
+  ╚═╝     ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝
+</pre>
+</div>
+
+<div align="center">
 
 ![MySQL Logo](https://www.mysql.com/common/logos/logo-mysql-170x115.png)
 
 > 💡 **Panduan Lengkap MySQL** - Referensi cepat untuk menguasai perintah-perintah MySQL dengan mudah
+> 
+> 🐬 **"Karena hidup terlalu singkat untuk query yang lambat!"** 🐬
 
 [![MySQL Version](https://img.shields.io/badge/MySQL-8.0-blue)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -21,6 +34,15 @@
 
 </div>
 
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&pause=1500&color=336791&center=true&vCenter=true&random=false&width=700&height=100&lines=MySQL+Commands+Guide;Master+Database+Management;Best+Practices+Included;Complete+Reference+Guide;Professional+Database+Guide" alt="Typing SVG" />
+</div>
+
+<div align="center">
+</div>
+
+---
+
 ## 📋 Daftar Isi
 - [🗄️ Panduan Lengkap MySQL](mysql_commands.md)
   - [📋 Daftar Isi](#-daftar-isi)
@@ -36,9 +58,11 @@
   - [🤝 Kontribusi](#-kontribusi)
   - [📝 Lisensi](#-lisensi)
   - [🙏 Terima Kasih](#-terima-kasih)
-  - [📞 Kontak \& Dukungan](#-kontak--dukungan)
+  - [📞 Kontak & Dukungan](#-kontak--dukungan)
   - [✨ Fitur Utama](#-fitur-utama-1)
   - [🛠️ Teknologi](#️-teknologi)
+
+---
 
 ## 📋 Fitur Utama
 - ✅ Panduan lengkap dari dasar hingga lanjutan
@@ -50,12 +74,22 @@
 - 🔒 Keamanan database
 - 🚀 High availability
 
+---
+
 ## 🎯 Target Pembaca
-- 👨‍💻 Developer pemula
-- 👩‍💻 Database administrator
-- 🎓 Mahasiswa
-- 👨‍🏫 Dosen
-- 👨‍🔧 System administrator
+<div align="center">
+
+| 👨‍💻 Role | 🎯 Tujuan | 📚 Materi Fokus |
+|----------|-----------|----------------|
+| Developer | Meningkatkan skill database | Query, optimasi, best practices |
+| DBA | Referensi cepat | Maintenance, HA, security |
+| Mahasiswa | Belajar MySQL | Dasar, contoh kasus, praktik |
+| Dosen | Materi pengajaran | Kurikulum, latihan, referensi |
+| SysAdmin | Manajemen database | Monitoring, backup, security |
+
+</div>
+
+---
 
 ## 🚀 Quick Start
 
@@ -70,6 +104,8 @@
 
 </div>
 
+---
+
 ## 📚 Panduan Belajar
 
 <div align="center">
@@ -77,7 +113,7 @@
 ### 🎯 Level Pembelajaran
 
 | Level | Topik | Link |
-|:-----:|:-----:|:----:|
+|:------|:------|:----:|
 | 🟢 **Basic** | • Tipe Data<br>• Perintah Dasar<br>• CRUD | [Mulai Belajar](mysql_commands.md#3--tipe-data) |
 | 🟡 **Intermediate** | • Query Lanjutan<br>• Fungsi<br>• Indeks | [Lanjutkan](mysql_commands.md#7--query-lanjutan) |
 | 🟠 **Advanced** | • Backup<br>• Replikasi<br>• High Availability | [Tingkatkan](mysql_commands.md#13--backup-dan-restore) |
@@ -86,7 +122,7 @@
 ### 📋 Materi Per Topik
 
 | Kategori | Materi | Link |
-|:--------:|:------:|:----:|
+|:---------|:-------|:----:|
 | 📊 **Database** | • Tipe Data<br>• Tabel<br>• Indeks | [Pelajari](mysql_commands.md#3--tipe-data) |
 | 🔄 **Operasi** | • CRUD<br>• Query<br>• Join | [Pelajari](mysql_commands.md#6--operasi-data-crud) |
 | 📈 **Fungsi** | • Agregasi<br>• Tanggal<br>• String | [Pelajari](mysql_commands.md#8--fungsi-agregasi) |
@@ -96,7 +132,7 @@
 ### 🎮 Latihan Praktis
 
 | Jenis | Deskripsi | Link |
-|:-----:|:---------:|:----:|
+|:------|:----------|:----:|
 | 📱 **Toko Online** | Sistem manajemen toko online dengan fitur produk, kategori, dan laporan penjualan | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
 | 🏥 **Klinik** | Sistem manajemen klinik dengan fitur jadwal dokter, rekam medis, dan laporan kunjungan | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
 | 📊 **Laporan** | Query untuk analisis data dan pembuatan laporan | [Lihat Contoh](mysql_commands.md#8--fungsi-agregasi) |
@@ -111,6 +147,8 @@
 
 </div>
 
+---
+
 ## 📚 Struktur Repository
 ```
 mysql-guide/
@@ -119,6 +157,8 @@ mysql-guide/
 ├── README.md            # File ini
 └── mysql_commands.md    # Panduan utama MySQL
 ```
+
+---
 
 ## 🤝 Kontribusi
 
@@ -132,9 +172,13 @@ Kami sangat menghargai kontribusi dari komunitas! Berikut cara Anda dapat berkon
 
 Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan kontribusi lebih detail.
 
+---
+
 ## 📝 Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file [LICENSE](LICENSE) untuk detail.
+
+---
 
 ## 🙏 Terima Kasih
 
@@ -142,6 +186,8 @@ Terima kasih kepada semua kontributor yang telah membantu mengembangkan panduan 
 
 - [@Mistekom](https://github.com/Mistekom) - Pembuat dan maintainer utama
 - Semua kontributor yang telah memberikan masukan dan perbaikan
+
+---
 
 ## 📞 Kontak & Dukungan
 
@@ -151,17 +197,25 @@ Jika Anda memiliki pertanyaan atau membutuhkan bantuan:
 - 💬 GitHub Issues: [Buat Issue Baru](https://github.com/Mistekom/mysql_command/issues/new)
 - 📱 GitHub: [@Mistekom](https://github.com/Mistekom)
 
+---
+
 ## ✨ Fitur Utama
 
-- 📚 Panduan lengkap perintah MySQL
-- 🔍 Penjelasan detail setiap perintah
-- 📝 Contoh penggunaan yang praktis
-- 🎯 Tips dan trik penggunaan
-- 📋 Glosarium istilah MySQL
-- 🔄 Panduan backup dan restore
-- 🔒 Manajemen user dan hak akses
-- 📊 Optimasi query dan indeks
-- 🛠️ Troubleshooting umum
+<div align="center">
+
+| 🎯 Fitur | 📝 Deskripsi | 💡 Contoh Penggunaan |
+|----------|-------------|---------------------|
+| ✅ Panduan Lengkap | Dari dasar hingga lanjutan | Query dasar hingga optimasi |
+| 📚 Glosarium | Istilah MySQL terlengkap | Referensi cepat istilah |
+| 🎯 Contoh Kasus | Praktik terbaik dan contoh nyata | Studi kasus e-commerce |
+| 🔧 Tips & Trik | Optimasi dan troubleshooting | Solusi masalah umum |
+| 🛠️ Tools | Monitoring dan maintenance | MySQL Workbench, phpMyAdmin |
+| 🔒 Keamanan | Best practices keamanan database | Enkripsi, backup, audit |
+| 🚀 HA | High availability dan scaling | Replikasi, clustering |
+
+</div>
+
+---
 
 ## 🛠️ Teknologi
 
