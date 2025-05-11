@@ -27,6 +27,11 @@
   - [📋 Fitur Utama](#-fitur-utama)
   - [🎯 Target Pembaca](#-target-pembaca)
   - [🚀 Quick Start](#-quick-start)
+  - [📚 Panduan Belajar](#-panduan-belajar)
+    - [🎯 Level Pembelajaran](#-level-pembelajaran)
+    - [📋 Materi Per Topik](#-materi-per-topik)
+    - [🎮 Latihan Praktis](#-latihan-praktis)
+    - [📝 Tips Belajar](#-tips-belajar)
   - [📚 Struktur Repository](#-struktur-repository)
   - [🤝 Kontribusi](#-kontribusi)
   - [📝 Lisensi](#-lisensi)
@@ -62,6 +67,56 @@
 [![Troubleshooting](https://img.shields.io/badge/🔧-Troubleshooting-red)](mysql_commands.md#26--troubleshooting-lanjutan)
 [![Monitoring](https://img.shields.io/badge/📊-Monitoring-purple)](mysql_commands.md#25--monitoring-dan-performance-tuning)
 [![Keamanan](https://img.shields.io/badge/🔒-Keamanan-yellow)](mysql_commands.md#21--keamanan-database)
+
+</div>
+
+## 📚 Panduan Belajar
+
+<div align="center">
+
+### 🎯 Level Pembelajaran
+
+| Level | Topik | Link |
+|-------|-------|------|
+| 🟢 Basic | Tipe Data, Perintah Dasar, CRUD | [Mulai Belajar](mysql_commands.md#3--tipe-data) |
+| 🟡 Intermediate | Query Lanjutan, Fungsi, Indeks | [Lanjutkan](mysql_commands.md#7--query-lanjutan) |
+| 🟠 Advanced | Backup, Replikasi, HA | [Tingkatkan](mysql_commands.md#13--backup-dan-restore) |
+| 🔴 Expert | Optimasi, Keamanan, Best Practices | [Master](mysql_commands.md#19--optimasi-query) |
+
+### 📋 Materi Per Topik
+
+| Kategori | Materi | Link |
+|----------|--------|------|
+| 📊 Database | Tipe Data, Tabel, Indeks | [Pelajari](mysql_commands.md#3--tipe-data) |
+| 🔄 Operasi | CRUD, Query, Join | [Pelajari](mysql_commands.md#6--operasi-data-crud) |
+| 📈 Fungsi | Agregasi, Tanggal, String | [Pelajari](mysql_commands.md#8--fungsi-agregasi) |
+| 🔒 Keamanan | User, Hak Akses, Enkripsi | [Pelajari](mysql_commands.md#21--keamanan-database) |
+| 🛠️ Tools | Workbench, Shell, Utilities | [Pelajari](mysql_commands.md#27-️-tools-dan-utilitas-mysql) |
+
+### 🎮 Latihan Praktis
+
+| Jenis | Deskripsi | Link |
+|-------|-----------|------|
+| 📱 Toko Online | Sistem manajemen toko online | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
+| 🏥 Klinik | Sistem manajemen klinik | [Lihat Contoh](mysql_commands.md#13--contoh-kasus-sederhana) |
+| 📊 Laporan | Query untuk laporan | [Lihat Contoh](mysql_commands.md#8--fungsi-agregasi) |
+
+### 📝 Tips Belajar
+
+1. **Mulai dari Dasar**
+   - Pelajari [Tipe Data](mysql_commands.md#3--tipe-data) dan [Perintah Dasar](mysql_commands.md#4--perintah-dasar)
+   - Pahami konsep [CRUD](mysql_commands.md#6--operasi-data-crud)
+   - Praktikkan dengan [Contoh Kasus](mysql_commands.md#13--contoh-kasus-sederhana)
+
+2. **Tingkatkan Skill**
+   - Pelajari [Query Lanjutan](mysql_commands.md#7--query-lanjutan)
+   - Kuasai [Fungsi-fungsi](mysql_commands.md#8--fungsi-agregasi)
+   - Pahami [Indeks](mysql_commands.md#12--indeks)
+
+3. **Menjadi Expert**
+   - Pelajari [Optimasi](mysql_commands.md#19--optimasi-query)
+   - Kuasai [Keamanan](mysql_commands.md#21--keamanan-database)
+   - Pahami [Best Practices](mysql_commands.md#22--best-practices-pengembangan)
 
 </div>
 
