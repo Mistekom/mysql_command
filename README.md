@@ -22,7 +22,7 @@
 </div>
 
 ## 📋 Daftar Isi
-- [🗄️ Panduan Lengkap MySQL](#️-panduan-lengkap-mysql)
+- [🗄️ Panduan Lengkap MySQL](#️-panduan-lengkap-mysql)(mysql_commands.md)
   - [📋 Daftar Isi](#-daftar-isi)
   - [📋 Fitur Utama](#-fitur-utama)
   - [🎯 Target Pembaca](#-target-pembaca)
