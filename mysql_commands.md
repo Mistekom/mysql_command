@@ -334,6 +334,7 @@ graph TD
   - [31. 🤝 Berkontribusi](#31--berkontribusi)
   - [32. 📄 Lisensi](#32--lisensi)
   - [33. 🙏 Terima Kasih](#33--terima-kasih)
+    - [Troubleshooting Umum di Windows](#troubleshooting-umum-di-windows)
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
@@ -3581,3 +3582,30 @@ Terima kasih telah menggunakan panduan ini. Semoga bermanfaat dalam perjalanan b
 </div>
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
+
+### Troubleshooting Umum di Windows
+
+```cmd
+:: Mengecek status service MySQL
+sc query mysql
+:: Atau jika servicenya MySQL80
+sc query MySQL80
+
+:: Start/Stop service MySQL
+net start mysql
+net stop mysql
+
+:: Cek port 3306 sudah dipakai aplikasi lain
+netstat -ano | findstr :3306
+
+:: Jika MySQL tidak dikenali di CMD, tambahkan ke PATH:
+set PATH=%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+:: Jika error permission, jalankan CMD/PowerShell sebagai Administrator
+```
+
+> 💡 **Tips Windows**:
+> - Gunakan XAMPP Control Panel jika instalasi via XAMPP.
+> - Jika service gagal start, cek file error log di `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`.
+> - Pastikan tidak ada aplikasi lain yang memakai port 3306.
+> - Untuk reset password root, lihat bagian Common Mistakes & Solusinya.
