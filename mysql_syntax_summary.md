@@ -28,31 +28,34 @@
       - [Security Best Practices](#security-best-practices)
       - [Monitoring dan Maintenance](#monitoring-dan-maintenance)
   - [📌 Catatan Penting](#-catatan-penting)
+  - [⚡ Performance Tips](#-performance-tips)
+  - [🔒 Security Best Practices](#-security-best-practices)
+  - [⚠️ Common Pitfalls](#️-common-pitfalls)
 
 ## 📋 Tabel Sintaks MySQL
 
 ### 🔷 Perintah DDL (Data Definition Language)
 
-| Sintaks | Penggunaan | Contoh Penggunaan |
-|---------|------------|-------------------|
-| `CREATE DATABASE` | Membuat database baru | `CREATE DATABASE nama_database;` |
-| `CREATE DATABASE IF NOT EXISTS` | Membuat database jika belum ada | `CREATE DATABASE IF NOT EXISTS nama_database;` |
-| `CREATE TABLE` | Membuat tabel baru | `CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50));` |
-| `CREATE TABLE IF NOT EXISTS` | Membuat tabel jika belum ada | `CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY);` |
-| `CREATE TABLE LIKE` | Membuat tabel dengan struktur yang sama | `CREATE TABLE new_users LIKE users;` |
-| `CREATE TABLE AS SELECT` | Membuat tabel dari hasil query | `CREATE TABLE active_users AS SELECT * FROM users WHERE status = 'active';` |
-| `ALTER TABLE` | Mengubah struktur tabel | `ALTER TABLE users ADD email VARCHAR(100);` |
-| `ALTER TABLE RENAME` | Mengubah nama tabel | `ALTER TABLE users RENAME TO customers;` |
-| `ALTER TABLE RENAME COLUMN` | Mengubah nama kolom | `ALTER TABLE users RENAME COLUMN name TO full_name;` |
-| `ALTER TABLE MODIFY` | Mengubah tipe data kolom | `ALTER TABLE users MODIFY name VARCHAR(100);` |
-| `ALTER TABLE CHANGE` | Mengubah nama dan tipe data kolom | `ALTER TABLE users CHANGE name full_name VARCHAR(100);` |
-| `ALTER TABLE DROP` | Menghapus kolom | `ALTER TABLE users DROP COLUMN email;` |
-| `DROP TABLE` | Menghapus tabel | `DROP TABLE users;` |
-| `DROP TABLE IF EXISTS` | Menghapus tabel jika ada | `DROP TABLE IF EXISTS users;` |
-| `DROP DATABASE` | Menghapus database | `DROP DATABASE nama_database;` |
-| `DROP DATABASE IF EXISTS` | Menghapus database jika ada | `DROP DATABASE IF EXISTS nama_database;` |
-| `TRUNCATE TABLE` | Menghapus semua data dalam tabel | `TRUNCATE TABLE users;` |
-| `RENAME TABLE` | Mengubah nama tabel | `RENAME TABLE users TO customers;` |
+| Sintaks | Penggunaan | Contoh Penggunaan | Performance Tips | Best Practices | Common Pitfalls |
+|---------|------------|-------------------|------------------|----------------|-----------------|
+| `CREATE DATABASE` | Membuat database baru | `CREATE DATABASE nama_database;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `CREATE DATABASE IF NOT EXISTS` | Membuat database jika belum ada | `CREATE DATABASE IF NOT EXISTS nama_database;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `CREATE TABLE` | Membuat tabel baru | `CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50));` | - Definisikan indeks yang tepat<br>- Pilih tipe data yang optimal | - Gunakan InnoDB engine<br>- Definisikan primary key | - Tipe data tidak optimal<br>- Lupa indeks penting |
+| `CREATE TABLE IF NOT EXISTS` | Membuat tabel jika belum ada | `CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY);` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `CREATE TABLE LIKE` | Membuat tabel dengan struktur yang sama | `CREATE TABLE new_users LIKE users;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `CREATE TABLE AS SELECT` | Membuat tabel dari hasil query | `CREATE TABLE active_users AS SELECT * FROM users WHERE status = 'active';` | - Gunakan karakter set yang tepat<br>- Pilih tipe data yang optimal | - Gunakan InnoDB engine<br>- Definisikan primary key | - Tipe data tidak optimal<br>- Lupa indeks penting |
+| `ALTER TABLE` | Mengubah struktur tabel | `ALTER TABLE users ADD email VARCHAR(100);` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `ALTER TABLE RENAME` | Mengubah nama tabel | `ALTER TABLE users RENAME TO customers;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `ALTER TABLE RENAME COLUMN` | Mengubah nama kolom | `ALTER TABLE users RENAME COLUMN name TO full_name;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `ALTER TABLE MODIFY` | Mengubah tipe data kolom | `ALTER TABLE users MODIFY name VARCHAR(100);` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `ALTER TABLE CHANGE` | Mengubah nama dan tipe data kolom | `ALTER TABLE users CHANGE name full_name VARCHAR(100);` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `ALTER TABLE DROP` | Menghapus kolom | `ALTER TABLE users DROP COLUMN email;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `DROP TABLE` | Menghapus tabel | `DROP TABLE users;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `DROP TABLE IF EXISTS` | Menghapus tabel jika ada | `DROP TABLE IF EXISTS users;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `DROP DATABASE` | Menghapus database | `DROP DATABASE nama_database;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `DROP DATABASE IF EXISTS` | Menghapus database jika ada | `DROP DATABASE IF EXISTS nama_database;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `TRUNCATE TABLE` | Menghapus semua data dalam tabel | `TRUNCATE TABLE users;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
+| `RENAME TABLE` | Mengubah nama tabel | `RENAME TABLE users TO customers;` | - Gunakan karakter set yang tepat<br>- Pilih collation yang sesuai | - Beri nama yang deskriptif<br>- Gunakan snake_case | - Lupa menentukan karakter set<br>- Nama terlalu panjang |
 
 ### 🔷 Perintah DML (Data Manipulation Language)
 
@@ -406,3 +409,68 @@
 13. Selalu test di environment development sebelum production
 14. Dokumentasikan perubahan database
 15. Buat disaster recovery plan 
+
+## ⚡ Performance Tips
+
+### Query Optimization
+1. **Index Usage**
+   - Gunakan indeks untuk kolom yang sering di-query
+   - Hindari indeks berlebih
+   - Monitor penggunaan indeks
+
+2. **Query Structure**
+   - Batasi jumlah kolom yang di-select
+   - Gunakan LIMIT untuk membatasi hasil
+   - Hindari SELECT *
+
+3. **Join Optimization**
+   - Gunakan INNER JOIN daripada WHERE
+   - Definisikan foreign key
+   - Index kolom join
+
+### Table Design
+1. **Data Types**
+   - Pilih tipe data yang tepat
+   - Hindari VARCHAR terlalu besar
+   - Gunakan ENUM untuk nilai tetap
+
+2. **Normalization**
+   - Normalize sampai 3NF
+   - Denormalize jika perlu performa
+   - Pertimbangkan trade-off
+
+## 🔒 Security Best Practices
+
+1. **User Management**
+   - Gunakan strong passwords
+   - Batasi hak akses
+   - Audit user activities
+
+2. **Data Protection**
+   - Enkripsi data sensitif
+   - Backup secara regular
+   - Implementasi SSL/TLS
+
+3. **Query Security**
+   - Gunakan prepared statements
+   - Validasi input
+   - Escape special characters
+
+## ⚠️ Common Pitfalls
+
+1. **Query Issues**
+   - N+1 query problem
+   - Missing indexes
+   - Inefficient joins
+
+2. **Data Type Problems**
+   - Wrong data type selection
+   - Character set issues
+   - Collation conflicts
+
+3. **Configuration Mistakes**
+   - Buffer pool size
+   - Connection limits
+   - Cache settings
+
+// ... rest of the existing content ... 

@@ -1,4 +1,17 @@
-# 🗄️ Panduan Perintah MySQL
+# 📚 Panduan Lengkap MySQL Commands
+
+## 📋 Table of Contents
+- [📚 Panduan Lengkap MySQL Commands](#-panduan-lengkap-mysql-commands)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🎯 Fitur Utama](#-fitur-utama)
+  - [👥 Target Pembaca](#-target-pembaca)
+  - [📋 Prasyarat](#-prasyarat)
+  - [💡 Tips Belajar](#-tips-belajar)
+  - [❌ Kesalahan Umum](#-kesalahan-umum)
+  - [🗺️ Roadmap Belajar](#️-roadmap-belajar)
+  - [🎥 Video Tutorial](#-video-tutorial)
+  - [💻 Interactive Examples](#-interactive-examples)
+  - [🌍 Real-World Scenarios](#-real-world-scenarios)
 
 <div align="center">
 
@@ -335,6 +348,35 @@ graph TD
   - [32. 📄 Lisensi](#32--lisensi)
   - [33. 🙏 Terima Kasih](#33--terima-kasih)
     - [Troubleshooting Umum di Windows](#troubleshooting-umum-di-windows)
+  - [🔧 Troubleshooting Lanjutan](#-troubleshooting-lanjutan)
+    - [1. Masalah Performa Database](#1-masalah-performa-database)
+      - [Query Lambat](#query-lambat)
+      - [Solusi Performa](#solusi-performa)
+    - [2. Masalah Koneksi](#2-masalah-koneksi)
+      - [Error Koneksi Umum](#error-koneksi-umum)
+      - [Solusi Koneksi](#solusi-koneksi)
+  - [📋 Best Practices MySQL](#-best-practices-mysql)
+    - [1. Naming Convention](#1-naming-convention)
+      - [Database](#database)
+      - [Tabel](#tabel)
+      - [Kolom](#kolom)
+    - [2. Struktur Tabel Optimal](#2-struktur-tabel-optimal)
+      - [Primary Key](#primary-key)
+      - [Foreign Key](#foreign-key)
+      - [Tipe Data](#tipe-data)
+    - [3. Indeks yang Efisien](#3-indeks-yang-efisien)
+      - [Kapan Menggunakan Indeks](#kapan-menggunakan-indeks)
+      - [Jenis Indeks](#jenis-indeks)
+  - [📊 Monitoring dan Maintenance](#-monitoring-dan-maintenance)
+    - [1. Monitoring Performa](#1-monitoring-performa)
+      - [Server Status](#server-status)
+      - [Query Performance](#query-performance)
+    - [2. Maintenance Rutin](#2-maintenance-rutin)
+      - [Optimasi Tabel](#optimasi-tabel)
+      - [Backup Rutin](#backup-rutin)
+    - [3. Monitoring Tools](#3-monitoring-tools)
+      - [Built-in Tools](#built-in-tools)
+      - [Third-party Tools](#third-party-tools)
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
 
@@ -1356,6 +1398,18 @@ ALTER TABLE products ADD description TEXT;
 ALTER TABLE products ADD stock INT DEFAULT 0;
 ALTER TABLE products ADD created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
+-- Menambah Banyak Kolom dalam Satu Perintah
+ALTER TABLE [nama_tabel] 
+    ADD [kolom1] [tipe_data1] [constraint1],
+    ADD [kolom2] [tipe_data2] [constraint2],
+    ADD [kolom3] [tipe_data3] [constraint3];
+
+-- Contoh
+ALTER TABLE products 
+    ADD description TEXT,
+    ADD stock INT DEFAULT 0,
+    ADD created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
 -- Menghapus Kolom
 ALTER TABLE [nama_tabel] DROP COLUMN [kolom_lama];
 ALTER TABLE products DROP COLUMN old_column;
@@ -1400,6 +1454,18 @@ ALTER TABLE products CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 -- Mengubah Engine
 ALTER TABLE [nama_tabel] ENGINE = InnoDB;
 ALTER TABLE products ENGINE = InnoDB;
+
+-- Menambah beberapa kolom sekaligus
+ALTER TABLE products
+    ADD COLUMN supplier VARCHAR(100),
+    ADD COLUMN category VARCHAR(50),
+    ADD COLUMN last_restock DATE;
+
+-- Menambah beberapa kolom dengan constraint
+ALTER TABLE products
+    ADD COLUMN min_stock INT NOT NULL DEFAULT 0,
+    ADD COLUMN max_stock INT NOT NULL DEFAULT 1000,
+    ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
 ```
 
 > ⚠️ **Peringatan**: 
@@ -1423,6 +1489,140 @@ DROP TABLE products;
 > ⚠️ **Peringatan**: 
 > - Perintah ini akan menghapus tabel dan semua datanya secara permanen
 > - Pastikan Anda memiliki backup sebelum menghapus tabel
+</details>
+
+<details>
+<summary>📋 Mengelola Indeks</summary>
+
+```sql
+-- Membuat Indeks
+CREATE INDEX [nama_indeks] ON [nama_tabel] ([kolom]);
+CREATE INDEX idx_product_name ON products (name);
+CREATE INDEX idx_product_category ON products (category_id);
+
+-- Membuat Indeks Unik
+CREATE UNIQUE INDEX [nama_indeks] ON [nama_tabel] ([kolom]);
+CREATE UNIQUE INDEX idx_product_code ON products (product_code);
+
+-- Membuat Indeks Komposit
+CREATE INDEX [nama_indeks] ON [nama_tabel] ([kolom1], [kolom2]);
+CREATE INDEX idx_product_name_category ON products (name, category_id);
+
+-- Menghapus Indeks
+DROP INDEX [nama_indeks] ON [nama_tabel];
+DROP INDEX idx_product_name ON products;
+
+-- Melihat Indeks yang Ada
+SHOW INDEX FROM [nama_tabel];
+SHOW INDEX FROM products;
+```
+
+> 💡 **Tips**: 
+> - Gunakan indeks untuk kolom yang sering digunakan dalam WHERE, JOIN, atau ORDER BY
+> - Hindari terlalu banyak indeks karena dapat memperlambat operasi INSERT/UPDATE
+> - Pertimbangkan indeks komposit untuk query yang sering menggunakan multiple kolom
+> - Monitor penggunaan indeks dengan EXPLAIN untuk optimasi
+</details>
+
+<details>
+<summary>🔄 Mengelola Partisi Tabel</summary>
+
+```sql
+-- Membuat Tabel dengan Partisi
+CREATE TABLE sales (
+    id INT,
+    sale_date DATE,
+    amount DECIMAL(10,2)
+) PARTITION BY RANGE (YEAR(sale_date)) (
+    PARTITION p2020 VALUES LESS THAN (2021),
+    PARTITION p2021 VALUES LESS THAN (2022),
+    PARTITION p2022 VALUES LESS THAN (2023),
+    PARTITION p2023 VALUES LESS THAN (2024),
+    PARTITION p_future VALUES LESS THAN MAXVALUE
+);
+
+-- Menambah Partisi
+ALTER TABLE sales ADD PARTITION (
+    PARTITION p2024 VALUES LESS THAN (2025)
+);
+
+-- Menghapus Partisi
+ALTER TABLE sales DROP PARTITION p2020;
+
+-- Melihat Partisi
+SHOW CREATE TABLE sales;
+SHOW TABLE STATUS LIKE 'sales';
+```
+
+> 💡 **Tips**: 
+> - Partisi berguna untuk tabel besar dengan pola akses yang dapat diprediksi
+> - Pilih strategi partisi yang sesuai (RANGE, LIST, HASH, KEY)
+> - Pertimbangkan maintenance partisi secara berkala
+> - Monitor ukuran dan performa partisi
+</details>
+
+<details>
+<summary>🔍 Mengelola View</summary>
+
+```sql
+-- Membuat View
+CREATE VIEW [nama_view] AS
+SELECT [kolom1], [kolom2]
+FROM [nama_tabel]
+WHERE [kondisi];
+
+-- Contoh
+CREATE VIEW active_products AS
+SELECT id, name, price
+FROM products
+WHERE stock > 0;
+
+-- Mengubah View
+CREATE OR REPLACE VIEW [nama_view] AS
+SELECT [kolom1], [kolom2]
+FROM [nama_tabel]
+WHERE [kondisi];
+
+-- Menghapus View
+DROP VIEW [nama_view];
+
+-- Melihat View
+SHOW FULL TABLES WHERE table_type = 'VIEW';
+```
+
+> 💡 **Tips**: 
+> - View berguna untuk menyederhanakan query kompleks
+> - Gunakan view untuk keamanan data (membatasi akses kolom)
+> - Pertimbangkan performa saat membuat view kompleks
+> - Dokumentasikan view untuk memudahkan maintenance
+</details>
+
+<details>
+<summary>📊 Mengelola Temporary Table</summary>
+
+```sql
+-- Membuat Temporary Table
+CREATE TEMPORARY TABLE [nama_tabel] (
+    [kolom1] [tipe_data],
+    [kolom2] [tipe_data]
+);
+
+-- Contoh
+CREATE TEMPORARY TABLE temp_products AS
+SELECT * FROM products WHERE stock > 0;
+
+-- Menghapus Temporary Table
+DROP TEMPORARY TABLE [nama_tabel];
+
+-- Melihat Temporary Table
+SHOW TABLES;
+```
+
+> 💡 **Tips**: 
+> - Temporary table berguna untuk menyimpan hasil intermediate
+> - Temporary table otomatis terhapus saat session berakhir
+> - Gunakan untuk query kompleks yang membutuhkan multiple steps
+> - Perhatikan penggunaan memori saat bekerja dengan temporary table
 </details>
 
 [⬆️ Kembali ke Daftar Isi](#-daftar-isi)
@@ -3609,3 +3809,201 @@ set PATH=%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin
 > - Jika service gagal start, cek file error log di `C:\ProgramData\MySQL\MySQL Server 8.0\Data\`.
 > - Pastikan tidak ada aplikasi lain yang memakai port 3306.
 > - Untuk reset password root, lihat bagian Common Mistakes & Solusinya.
+
+## 🔧 Troubleshooting Lanjutan
+
+### 1. Masalah Performa Database
+
+#### Query Lambat
+```sql
+-- Analisis query yang lambat
+EXPLAIN SELECT * FROM users WHERE status = 'active';
+
+-- Cek status server
+SHOW STATUS LIKE '%slow%';
+SHOW VARIABLES LIKE '%slow%';
+
+-- Cek proses yang sedang berjalan
+SHOW PROCESSLIST;
+
+-- Cek penggunaan indeks
+SHOW INDEX FROM nama_tabel;
+```
+
+#### Solusi Performa
+1. **Optimasi Query**
+   - Gunakan indeks yang tepat
+   - Batasi jumlah kolom yang diambil
+   - Hindari SELECT *
+   - Gunakan LIMIT
+
+2. **Optimasi Server**
+   - Sesuaikan buffer pool size
+   - Optimasi query cache
+   - Atur max connections
+
+### 2. Masalah Koneksi
+
+#### Error Koneksi Umum
+```sql
+-- Cek status koneksi
+SHOW STATUS LIKE '%connect%';
+
+-- Cek max connections
+SHOW VARIABLES LIKE 'max_connections';
+
+-- Cek timeout settings
+SHOW VARIABLES LIKE '%timeout%';
+```
+
+#### Solusi Koneksi
+1. **Connection Pool**
+   - Atur ukuran pool yang optimal
+   - Monitor penggunaan koneksi
+   - Implementasi connection timeout
+
+2. **Network Issues**
+   - Cek firewall settings
+   - Verifikasi port MySQL
+   - Test network latency
+
+## 📋 Best Practices MySQL
+
+### 1. Naming Convention
+
+#### Database
+- Gunakan lowercase
+- Hindari spasi, gunakan underscore
+- Gunakan prefix yang konsisten
+```sql
+CREATE DATABASE ecommerce_db;
+CREATE DATABASE inventory_system;
+```
+
+#### Tabel
+- Gunakan plural untuk nama tabel
+- Gunakan prefix yang konsisten
+- Hindari reserved words
+```sql
+CREATE TABLE users (
+    id INT PRIMARY KEY,
+    username VARCHAR(50)
+);
+
+CREATE TABLE order_items (
+    id INT PRIMARY KEY,
+    order_id INT
+);
+```
+
+#### Kolom
+- Gunakan singular untuk nama kolom
+- Gunakan prefix yang konsisten
+- Gunakan tipe data yang tepat
+```sql
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    product_price DECIMAL(10,2)
+);
+```
+
+### 2. Struktur Tabel Optimal
+
+#### Primary Key
+- Selalu gunakan primary key
+- Gunakan auto_increment untuk ID
+- Hindari composite primary key jika memungkinkan
+
+#### Foreign Key
+- Selalu definisikan foreign key
+- Gunakan ON DELETE dan ON UPDATE
+- Index foreign key columns
+
+#### Tipe Data
+- Pilih tipe data yang tepat
+- Gunakan VARCHAR dengan panjang yang sesuai
+- Hindari TEXT jika memungkinkan
+
+### 3. Indeks yang Efisien
+
+#### Kapan Menggunakan Indeks
+- Kolom yang sering digunakan dalam WHERE
+- Kolom yang digunakan dalam JOIN
+- Kolom yang digunakan dalam ORDER BY
+
+#### Jenis Indeks
+```sql
+-- Single column index
+CREATE INDEX idx_username ON users(username);
+
+-- Composite index
+CREATE INDEX idx_name_email ON users(name, email);
+
+-- Unique index
+CREATE UNIQUE INDEX idx_email ON users(email);
+```
+
+## 📊 Monitoring dan Maintenance
+
+### 1. Monitoring Performa
+
+#### Server Status
+```sql
+-- Cek status server
+SHOW STATUS;
+
+-- Cek variabel server
+SHOW VARIABLES;
+
+-- Cek proses yang berjalan
+SHOW PROCESSLIST;
+```
+
+#### Query Performance
+```sql
+-- Analisis query
+EXPLAIN SELECT * FROM users WHERE status = 'active';
+
+-- Cek slow queries
+SHOW VARIABLES LIKE '%slow%';
+SHOW STATUS LIKE '%slow%';
+```
+
+### 2. Maintenance Rutin
+
+#### Optimasi Tabel
+```sql
+-- Optimasi tabel
+OPTIMIZE TABLE users;
+
+-- Analisis tabel
+ANALYZE TABLE users;
+
+-- Check tabel
+CHECK TABLE users;
+
+-- Repair tabel
+REPAIR TABLE users;
+```
+
+#### Backup Rutin
+```sql
+-- Backup database
+mysqldump -u root -p database_name > backup.sql
+
+-- Backup tabel spesifik
+mysqldump -u root -p database_name table_name > table_backup.sql
+```
+
+### 3. Monitoring Tools
+
+#### Built-in Tools
+- MySQL Workbench
+- MySQL Enterprise Monitor
+- Performance Schema
+
+#### Third-party Tools
+- Percona Monitoring
+- Prometheus + Grafana
+- Zabbix

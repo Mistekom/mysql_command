@@ -1,33 +1,30 @@
 # 🗄️ MySQL Command Reference Guide
 
 <div align="center">
-<pre>
-  ███╗   ███╗██╗   ██╗███████╗ ██████╗ ██╗     
-  ████╗ ████║╚██╗ ██╔╝██╔════╝██╔═══██╗██║     
-  ██╔████╔██║ ╚████╔╝ ███████╗██║   ██║██║     
-  ██║╚██╔╝██║  ╚██╔╝  ╚════██║██║   ██║██║     
-  ██║ ╚═╝ ██║   ██║   ███████║╚██████╔╝███████╗
-  ╚═╝     ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ ╚══════╝
-</pre>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="200" height="200"/>
 
-![MySQL Logo](https://www.mysql.com/common/logos/logo-mysql-170x115.png)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![SQL](https://img.shields.io/badge/SQL-Reference-000000?style=for-the-badge&logo=sql&logoColor=white)](https://www.mysql.com/)
+[![Database](https://img.shields.io/badge/Database-Guide-336791?style=for-the-badge&logo=database&logoColor=white)](https://www.mysql.com/)
 
 > 💡 **Panduan Lengkap MySQL** - Referensi cepat untuk menguasai perintah-perintah MySQL dengan mudah
 > 
 > 🐬 **"Karena hidup terlalu singkat untuk query yang lambat!"** 🐬
 
-[![MySQL Version](https://img.shields.io/badge/MySQL-8.0-blue)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Contributors](https://img.shields.io/badge/Contributors-Welcome-orange)](CONTRIBUTING.md)
+[![MySQL Version](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-2ECC71?style=for-the-badge)](LICENSE)
+[![Contributors](https://img.shields.io/badge/Contributors-Welcome-FF6B6B?style=for-the-badge)](CONTRIBUTING.md)
 [![Stars](https://img.shields.io/github/stars/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/stargazers)
 [![Forks](https://img.shields.io/github/forks/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command/commits)
-[![Documentation](https://img.shields.io/badge/Documentation-Complete-brightgreen)](mysql_commands.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Documentation](https://img.shields.io/badge/Documentation-Complete-2ECC71?style=for-the-badge)](mysql_commands.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-2ECC71?style=for-the-badge)](CONTRIBUTING.md)
 [![Open Issues](https://img.shields.io/github/issues/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command/issues?q=is%3Aissue+is%3Aclosed)
 [![Code Size](https://img.shields.io/github/languages/code-size/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command)
 [![Languages](https://img.shields.io/github/languages/top/Mistekom/mysql_command)](https://github.com/Mistekom/mysql_command)
+[![Views](https://img.shields.io/github/watchers/Mistekom/mysql_command?style=social)](https://github.com/Mistekom/mysql_command/watchers)
+[![Downloads](https://img.shields.io/github/downloads/Mistekom/mysql_command/total?style=social)](https://github.com/Mistekom/mysql_command/releases)
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&pause=1500&color=336791&center=true&vCenter=true&random=false&width=700&height=100&lines=MySQL+Commands+Guide;Master+Database+Management;Best+Practices+Included;Complete+Reference+Guide;Professional+Database+Guide" alt="Typing SVG" />
 
@@ -35,22 +32,47 @@
 
 ---
 
+## 📋 Quick Navigation
+
+<div align="center">
+
+[![Panduan MySQL](https://img.shields.io/badge/📖-Panduan_MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](mysql_commands.md "Panduan lengkap perintah MySQL")
+[![Glosarium](https://img.shields.io/badge/📚-Glosarium-336791?style=for-the-badge&logo=book&logoColor=white)](mysql_commands.md#23--glosarium-istilah-mysql "Kumpulan istilah MySQL")
+[![Contoh Kasus](https://img.shields.io/badge/🎯-Contoh_Kasus-FF6B6B?style=for-the-badge&logo=target&logoColor=white)](mysql_commands.md#13--contoh-kasus-sederhana "Studi kasus praktis")
+[![Troubleshooting](https://img.shields.io/badge/🔧-Troubleshooting-FFA500?style=for-the-badge&logo=tools&logoColor=white)](mysql_commands.md#26--troubleshooting-lanjutan "Solusi masalah umum")
+[![Monitoring](https://img.shields.io/badge/📊-Monitoring-9B59B6?style=for-the-badge&logo=chart-bar&logoColor=white)](mysql_commands.md#25--monitoring-dan-performance-tuning "Tools monitoring database")
+[![Keamanan](https://img.shields.io/badge/🔒-Keamanan-2ECC71?style=for-the-badge&logo=shield-alt&logoColor=white)](mysql_commands.md#21--keamanan-database "Best practices keamanan")
+
+</div>
+
+---
+
 ## 📋 Table of Contents
 
-- [✨ Fitur Utama](#-fitur-utama)
-- [🎯 Target Pembaca](#-target-pembaca)
-- [🚀 Quick Start](#-quick-start)
-- [📚 Panduan Belajar](#-panduan-belajar)
-  - [🎯 Level Pembelajaran](#-level-pembelajaran)
-  - [📋 Materi Per Topik](#-materi-per-topik)
-  - [🎮 Latihan Praktis](#-latihan-praktis)
-  - [📝 Tips Belajar](#-tips-belajar)
-- [📚 Struktur Repository](#-struktur-repository)
-- [🤝 Kontribusi](#-kontribusi)
-- [📝 Lisensi](#-lisensi)
-- [🙏 Terima Kasih](#-terima-kasih)
-- [📞 Kontak & Dukungan](#-kontak--dukungan)
-- [🛠️ Teknologi](#️-teknologi)
+<details>
+<summary>📚 Klik untuk melihat daftar isi</summary>
+
+- [🗄️ MySQL Command Reference Guide](#️-mysql-command-reference-guide)
+  - [📋 Quick Navigation](#-quick-navigation)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [✨ Fitur Utama](#-fitur-utama)
+  - [🎯 Target Pembaca](#-target-pembaca)
+  - [📚 Panduan Belajar](#-panduan-belajar)
+    - [🎯 Level Pembelajaran](#-level-pembelajaran)
+  - [📚 Struktur Repository](#-struktur-repository)
+  - [🤝 Kontribusi](#-kontribusi)
+  - [📝 Lisensi](#-lisensi)
+  - [🙏 Terima Kasih](#-terima-kasih)
+  - [📞 Kontak \& Dukungan](#-kontak--dukungan)
+  - [❓ FAQ](#-faq)
+    - [1. Bagaimana cara memulai belajar MySQL?](#1-bagaimana-cara-memulai-belajar-mysql)
+    - [2. Apakah ada versi offline dari dokumentasi ini?](#2-apakah-ada-versi-offline-dari-dokumentasi-ini)
+    - [3. Bagaimana cara berkontribusi?](#3-bagaimana-cara-berkontribusi)
+    - [4. Apakah ada komunitas untuk diskusi?](#4-apakah-ada-komunitas-untuk-diskusi)
+    - [5. Bagaimana cara melaporkan bug?](#5-bagaimana-cara-melaporkan-bug)
+  - [🛠️ Teknologi](#️-teknologi)
+
+</details>
 
 ---
 
@@ -58,22 +80,50 @@
 
 <div align="center">
 
-| Kategori | Fitur | Deskripsi | Link |
-|:---------|:------|:----------|:-----|
-| 📚 **Panduan** | ✅ Panduan Lengkap | Referensi komprehensif dari dasar hingga lanjutan | [Lihat Sintaks](mysql_syntax_summary.md) |
-| | 📚 Glosarium | Kumpulan istilah MySQL terlengkap | [Referensi Cepat](mysql_syntax_summary.md#-tipe-data-dan-constraint) |
-| | 🎯 Contoh Kasus | Praktik terbaik dan studi kasus nyata | [Contoh Query](mysql_syntax_summary.md#-perintah-dql-data-query-language) |
-| 🔧 **Optimasi** | ⚡ Query Optimization | Tips dan trik optimasi query | [Best Practices](mysql_syntax_summary.md#-best-practices-dan-keamanan) |
-| | 🔍 Troubleshooting | Solusi masalah umum | [Troubleshooting](mysql_syntax_summary.md#-best-practices-dan-keamanan) |
-| | 📊 Monitoring | Tools dan teknik monitoring | [Monitoring](mysql_syntax_summary.md#monitoring-dan-maintenance) |
-| 🛠️ **Tools** | 🖥️ Workbench | Panduan MySQL Workbench | [Fitur Lanjutan](mysql_syntax_summary.md#-fitur-lanjutan) |
-| | 🔄 Utilities | Tools dan utilitas MySQL | [Tools](mysql_syntax_summary.md#-fitur-lanjutan) |
-| 🔒 **Keamanan** | 🔐 Security | Best practices keamanan database | [Keamanan](mysql_syntax_summary.md#-fungsi-enkripsi-dan-hashing) |
-| | 💾 Backup | Strategi backup dan recovery | [Backup](mysql_syntax_summary.md#monitoring-dan-maintenance) |
-| | 📝 Audit | Logging dan audit trail | [Audit](mysql_syntax_summary.md#monitoring-dan-maintenance) |
-| 🚀 **HA & Scaling** | ⚖️ High Availability | Replikasi dan clustering | [HA](mysql_syntax_summary.md#monitoring-dan-maintenance) |
-| | 📈 Scaling | Teknik scaling database | [Scaling](mysql_syntax_summary.md#monitoring-dan-maintenance) |
-| | 🔄 Replication | Konfigurasi replikasi | [Replication](mysql_syntax_summary.md#monitoring-dan-maintenance) |
+<table>
+<tr>
+<td align="center"><b>Kategori</b></td>
+<td align="center"><b>Fitur</b></td>
+<td align="center"><b>Deskripsi</b></td>
+<td align="center"><b>Link</b></td>
+</tr>
+<tr>
+<td>📚 <b>Panduan</b></td>
+<td>✅ Panduan Lengkap</td>
+<td>Referensi komprehensif dari dasar hingga lanjutan</td>
+<td><a href="mysql_syntax_summary.md">Lihat Sintaks</a></td>
+</tr>
+<tr>
+<td></td>
+<td>📚 Glosarium</td>
+<td>Kumpulan istilah MySQL terlengkap</td>
+<td><a href="mysql_syntax_summary.md#-tipe-data-dan-constraint">Referensi Cepat</a></td>
+</tr>
+<tr>
+<td></td>
+<td>🎯 Contoh Kasus</td>
+<td>Praktik terbaik dan studi kasus nyata</td>
+<td><a href="mysql_syntax_summary.md#-perintah-dql-data-query-language">Contoh Query</a></td>
+</tr>
+<tr>
+<td>🔧 <b>Optimasi</b></td>
+<td>⚡ Query Optimization</td>
+<td>Tips dan trik optimasi query</td>
+<td><a href="mysql_syntax_summary.md#-best-practices-dan-keamanan">Best Practices</a></td>
+</tr>
+<tr>
+<td></td>
+<td>🔍 Troubleshooting</td>
+<td>Solusi masalah umum</td>
+<td><a href="mysql_syntax_summary.md#-best-practices-dan-keamanan">Troubleshooting</a></td>
+</tr>
+<tr>
+<td></td>
+<td>📊 Monitoring</td>
+<td>Tools dan teknik monitoring</td>
+<td><a href="mysql_syntax_summary.md#monitoring-dan-maintenance">Monitoring</a></td>
+</tr>
+</table>
 
 </div>
 
@@ -83,28 +133,44 @@
 
 <div align="center">
 
-| 👨‍💻 Role | 🎯 Tujuan | 📚 Materi Fokus |
-|----------|-----------|----------------|
-| Developer | Meningkatkan skill database | Query, optimasi, best practices |
-| DBA | Referensi cepat | Maintenance, HA, security |
-| Mahasiswa | Belajar MySQL | Dasar, contoh kasus, praktik |
-| Dosen | Materi pengajaran | Kurikulum, latihan, referensi |
-| SysAdmin | Manajemen database | Monitoring, backup, security |
-
-</div>
-
----
-
-## 🚀 Quick Start
-
-<div align="center">
-
-[![Panduan MySQL](https://img.shields.io/badge/📖-Panduan_MySQL-blue)](mysql_commands.md)
-[![Glosarium](https://img.shields.io/badge/📚-Glosarium-green)](mysql_commands.md#23--glosarium-istilah-mysql)
-[![Contoh Kasus](https://img.shields.io/badge/🎯-Contoh_Kasus-orange)](mysql_commands.md#13--contoh-kasus-sederhana)
-[![Troubleshooting](https://img.shields.io/badge/🔧-Troubleshooting-red)](mysql_commands.md#26--troubleshooting-lanjutan)
-[![Monitoring](https://img.shields.io/badge/📊-Monitoring-purple)](mysql_commands.md#25--monitoring-dan-performance-tuning)
-[![Keamanan](https://img.shields.io/badge/🔒-Keamanan-yellow)](mysql_commands.md#21--keamanan-database)
+<table>
+<tr>
+<td align="center"><b>👨‍💻 Role</b></td>
+<td align="center"><b>🎯 Tujuan</b></td>
+<td align="center"><b>📚 Materi Fokus</b></td>
+<td align="center"><b>⏱️ Estimasi Waktu</b></td>
+</tr>
+<tr>
+<td>Developer</td>
+<td>Meningkatkan skill database</td>
+<td>Query, optimasi, best practices</td>
+<td>2-3 bulan</td>
+</tr>
+<tr>
+<td>DBA</td>
+<td>Referensi cepat</td>
+<td>Maintenance, HA, security</td>
+<td>1-2 bulan</td>
+</tr>
+<tr>
+<td>Mahasiswa</td>
+<td>Belajar MySQL</td>
+<td>Dasar, contoh kasus, praktik</td>
+<td>3-4 bulan</td>
+</tr>
+<tr>
+<td>Dosen</td>
+<td>Materi pengajaran</td>
+<td>Kurikulum, latihan, referensi</td>
+<td>1 bulan</td>
+</tr>
+<tr>
+<td>SysAdmin</td>
+<td>Manajemen database</td>
+<td>Monitoring, backup, security</td>
+<td>2 bulan</td>
+</tr>
+</table>
 
 </div>
 
@@ -116,44 +182,50 @@
 
 ### 🎯 Level Pembelajaran
 
-| Level | Topik | Link |
-|:------|:------|:----:|
-| 🟢 **Basic** | • Tipe Data<br>• Perintah Dasar<br>• CRUD | [Mulai Belajar](mysql_syntax_summary.md#-tipe-data-dan-constraint) |
-| 🟡 **Intermediate** | • Query Lanjutan<br>• Fungsi<br>• Indeks | [Lanjutkan](mysql_syntax_summary.md#-fungsi-agregasi) |
-| 🟠 **Advanced** | • Backup<br>• Replikasi<br>• High Availability | [Tingkatkan](mysql_syntax_summary.md#-fitur-lanjutan) |
-| 🔴 **Expert** | • Optimasi<br>• Keamanan<br>• Best Practices | [Master](mysql_syntax_summary.md#-best-practices-dan-keamanan) |
-
-### 📋 Materi Per Topik
-
-| Kategori | Materi | Link |
-|:---------|:-------|:----:|
-| 📊 **Database** | • Tipe Data<br>• Tabel<br>• Indeks | [Pelajari](mysql_syntax_summary.md#-tipe-data-dan-constraint) |
-| 🔄 **Operasi** | • CRUD<br>• Query<br>• Join | [Pelajari](mysql_syntax_summary.md#-perintah-dml-data-manipulation-language) |
-| 📈 **Fungsi** | • Agregasi<br>• Tanggal<br>• String | [Pelajari](mysql_syntax_summary.md#-fungsi-agregasi) |
-| 🔒 **Keamanan** | • User<br>• Hak Akses<br>• Enkripsi | [Pelajari](mysql_syntax_summary.md#-fungsi-enkripsi-dan-hashing) |
-| 🛠️ **Tools** | • Workbench<br>• Shell<br>• Utilities | [Pelajari](mysql_syntax_summary.md#-fitur-lanjutan) |
-
-### 🎮 Latihan Praktis
-
-| Jenis | Deskripsi | Link |
-|:------|:----------|:----:|
-| 📱 **Toko Online** | Sistem manajemen toko online dengan fitur produk, kategori, dan laporan penjualan | [Lihat Contoh](mysql_syntax_summary.md#-perintah-dql-data-query-language) |
-| 🏥 **Klinik** | Sistem manajemen klinik dengan fitur jadwal dokter, rekam medis, dan laporan kunjungan | [Lihat Contoh](mysql_syntax_summary.md#-perintah-dql-data-query-language) |
-| 📊 **Laporan** | Query untuk analisis data dan pembuatan laporan | [Lihat Contoh](mysql_syntax_summary.md#-fungsi-agregasi) |
-
-### 📝 Tips Belajar
-
-| Level | Tips | Link |
-|:------|:-----|:----:|
-| 🟢 **Pemula** | • Pelajari [Tipe Data](mysql_syntax_summary.md#-tipe-data-dan-constraint) dan [Perintah Dasar](mysql_syntax_summary.md#-perintah-ddl-data-definition-language)<br>• Pahami konsep [CRUD](mysql_syntax_summary.md#-perintah-dml-data-manipulation-language)<br>• Praktikkan dengan [Contoh Kasus](mysql_syntax_summary.md#-perintah-dql-data-query-language) | [Mulai Belajar](mysql_syntax_summary.md#-tipe-data-dan-constraint) |
-| 🟡 **Menengah** | • Pelajari [Query Lanjutan](mysql_syntax_summary.md#-perintah-dql-data-query-language)<br>• Kuasai [Fungsi-fungsi](mysql_syntax_summary.md#-fungsi-agregasi)<br>• Pahami [Indeks](mysql_syntax_summary.md#-fitur-lanjutan) | [Lanjutkan](mysql_syntax_summary.md#-perintah-dql-data-query-language) |
-| 🔴 **Lanjutan** | • Pelajari [Optimasi](mysql_syntax_summary.md#-best-practices-dan-keamanan)<br>• Kuasai [Keamanan](mysql_syntax_summary.md#-fungsi-enkripsi-dan-hashing)<br>• Pahami [Best Practices](mysql_syntax_summary.md#-best-practices-dan-keamanan) | [Tingkatkan](mysql_syntax_summary.md#-best-practices-dan-keamanan) |
+<table>
+<tr>
+<td align="center"><b>Level</b></td>
+<td align="center"><b>Topik</b></td>
+<td align="center"><b>⏱️ Waktu</b></td>
+<td align="center"><b>📋 Prerequisites</b></td>
+<td align="center"><b>Link</b></td>
+</tr>
+<tr>
+<td>🟢 <b>Basic</b></td>
+<td>• Tipe Data<br>• Perintah Dasar<br>• CRUD</td>
+<td>1 bulan</td>
+<td>• SQL Dasar<br>• Database Concept</td>
+<td><a href="mysql_syntax_summary.md#-tipe-data-dan-constraint">Mulai Belajar</a></td>
+</tr>
+<tr>
+<td>🟡 <b>Intermediate</b></td>
+<td>• Query Lanjutan<br>• Fungsi<br>• Indeks</td>
+<td>2 bulan</td>
+<td>• Basic MySQL<br>• Query Dasar</td>
+<td><a href="mysql_syntax_summary.md#-fungsi-agregasi">Lanjutkan</a></td>
+</tr>
+<tr>
+<td>🟠 <b>Advanced</b></td>
+<td>• Backup<br>• Replikasi<br>• High Availability</td>
+<td>3 bulan</td>
+<td>• Intermediate MySQL<br>• Server Admin</td>
+<td><a href="mysql_syntax_summary.md#-fitur-lanjutan">Tingkatkan</a></td>
+</tr>
+<tr>
+<td>🔴 <b>Expert</b></td>
+<td>• Optimasi<br>• Keamanan<br>• Best Practices</td>
+<td>4 bulan</td>
+<td>• Advanced MySQL<br>• System Design</td>
+<td><a href="mysql_syntax_summary.md#-best-practices-dan-keamanan">Master</a></td>
+</tr>
+</table>
 
 </div>
 
 ---
 
 ## 📚 Struktur Repository
+
 ```
 mysql-guide/
 ├── CONTRIBUTING.md      # Panduan kontribusi
@@ -204,16 +276,170 @@ Jika Anda memiliki pertanyaan atau membutuhkan bantuan:
 
 ---
 
+## ❓ FAQ
+
+<details>
+<summary>Pertanyaan Umum</summary>
+
+### 1. Bagaimana cara memulai belajar MySQL?
+Mulai dari level Basic dengan mempelajari tipe data dan perintah dasar. Ikuti panduan belajar yang tersedia.
+
+### 2. Apakah ada versi offline dari dokumentasi ini?
+Ya, Anda bisa clone repository ini dan akses secara offline.
+
+### 3. Bagaimana cara berkontribusi?
+Lihat bagian [Kontribusi](#-kontribusi) untuk panduan lengkap.
+
+### 4. Apakah ada komunitas untuk diskusi?
+Ya, Anda bisa bergabung melalui GitHub Discussions atau membuat issue baru.
+
+### 5. Bagaimana cara melaporkan bug?
+Buat issue baru di GitHub dengan label "bug" dan deskripsi yang jelas.
+
+</details>
+
+---
+
 ## 🛠️ Teknologi
 
-- MySQL 8.0
-- Markdown
-- GitHub Pages
-- Shields.io
-- Git
+<div align="center">
+
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Markdown](https://img.shields.io/badge/Markdown-Guide-000000?style=for-the-badge&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Hosted-222222?style=for-the-badge&logo=github-pages&logoColor=white)](https://pages.github.com/)
+[![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+
+</div>
 
 ---
 
 <div align="center">
   <sub>Dibuat dengan ❤️ oleh <a href="https://github.com/Mistekom">Mistekom</a></sub>
 </div> 
+
+<details>
+<summary>🌙 Dark Mode</summary>
+
+```css
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles */
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  a {
+    color: #58a6ff;
+  }
+  
+  code {
+    background-color: #2d2d2d;
+    color: #e6e6e6;
+  }
+  
+  table {
+    border-color: #404040;
+  }
+  
+  th, td {
+    border-color: #404040;
+  }
+  
+  /* Hover effects */
+  a:hover {
+    color: #79b8ff;
+    text-decoration: underline;
+  }
+  
+  /* Table hover */
+  tr:hover {
+    background-color: #2d2d2d;
+  }
+  
+  /* Code block */
+  pre {
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+  }
+}
+```
+</details> 
+
+## 📊 Project Status
+
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yourusername/mysql_command)
+[![Documentation](https://img.shields.io/badge/docs-latest-blue)](https://github.com/yourusername/mysql_command)
+[![Contributors](https://img.shields.io/github/contributors/yourusername/mysql_command)](https://github.com/yourusername/mysql_command/graphs/contributors)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/yourusername/mysql_command/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/yourusername/mysql_command)](https://github.com/yourusername/mysql_command/commits/main)
+[![Open Issues](https://img.shields.io/github/issues/yourusername/mysql_command)](https://github.com/yourusername/mysql_command/issues)
+
+## 🚀 Quick Navigation
+
+- [📚 Dokumentasi](#-dokumentasi)
+- [🎯 Fitur Utama](#-fitur-utama)
+- [👥 Target Pembaca](#-target-pembaca)
+- [📋 Panduan Belajar](#-panduan-belajar)
+- [🗂️ Struktur Repository](#️-struktur-repository)
+- [🤝 Kontribusi](#-kontribusi)
+- [📝 Changelog](#-changelog)
+- [👥 Community Guidelines](#-community-guidelines)
+- [📞 Kontak & Dukungan](#-kontak--dukungan)
+
+## 📝 Changelog
+
+### [1.0.0] - 2024-03-20
+#### Added
+- Dokumentasi lengkap perintah MySQL
+- Panduan belajar terstruktur
+- Contoh penggunaan perintah
+- Best practices dan tips
+
+#### Changed
+- Perbaikan format dokumentasi
+- Penambahan contoh kode
+- Peningkatan navigasi
+
+#### Fixed
+- Koreksi typo dan kesalahan
+- Perbaikan link internal
+- Penyesuaian format markdown
+
+## 👥 Community Guidelines
+
+### Code of Conduct
+1. **Respect**
+   - Hormati semua kontributor
+   - Gunakan bahasa yang sopan
+   - Terima kritik dengan baik
+
+2. **Collaboration**
+   - Bantu kontributor lain
+   - Berbagi pengetahuan
+   - Diskusi yang konstruktif
+
+3. **Quality**
+   - Ikuti standar kode
+   - Dokumentasi yang jelas
+   - Testing yang memadai
+
+### Contribution Process
+1. **Before Contributing**
+   - Baca dokumentasi
+   - Cek issue yang ada
+   - Diskusikan perubahan
+
+2. **During Contribution**
+   - Ikuti style guide
+   - Buat branch baru
+   - Commit message yang jelas
+
+3. **After Contributing**
+   - Update dokumentasi
+   - Tambahkan test
+   - Review kode
+
+### Communication Channels
+- [Discord Server](https://discord.gg/your-server)
+- [GitHub Discussions](https://github.com/yourusername/mysql_command/discussions)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/your-tag)

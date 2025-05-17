@@ -58,6 +58,59 @@ Terima kasih atas minat Anda untuk berkontribusi pada proyek ini! Berikut adalah
    - Deskripsikan perubahan dengan singkat
    - Gunakan emoji jika relevan
 
+## 🔍 Code Review Guidelines
+
+1. **Sebelum Submit PR**
+   - Pastikan kode sudah di-test
+   - Periksa format dan style
+   - Update dokumentasi jika perlu
+
+2. **Review Checklist**
+   - [ ] Kode mengikuti best practices
+   - [ ] Dokumentasi sudah diupdate
+   - [ ] Test sudah ditambahkan
+   - [ ] Tidak ada konflik
+   - [ ] Semua test passed
+
+3. **Feedback**
+   - Terima feedback dengan terbuka
+   - Diskusikan perubahan yang diperlukan
+   - Update PR sesuai feedback
+
+## 🧪 Testing Requirements
+
+1. **Unit Testing**
+   - Tambahkan test untuk fitur baru
+   - Pastikan test coverage memadai
+   - Gunakan test framework yang sesuai
+
+2. **Integration Testing**
+   - Test interaksi antar komponen
+   - Verifikasi fungsionalitas end-to-end
+   - Test error handling
+
+3. **Performance Testing**
+   - Test query performance
+   - Verifikasi resource usage
+   - Check scalability
+
+## 📚 Documentation Standards
+
+1. **Code Documentation**
+   - Tambahkan komentar yang jelas
+   - Dokumentasikan fungsi dan parameter
+   - Berikan contoh penggunaan
+
+2. **User Documentation**
+   - Update README jika perlu
+   - Tambahkan contoh kasus
+   - Dokumentasikan perubahan API
+
+3. **Technical Documentation**
+   - Dokumentasikan arsitektur
+   - Jelaskan design decisions
+   - Update changelog
+
 ## 🐛 Melaporkan Bug
 
 1. **Cek Issues yang Ada**
@@ -86,6 +139,8 @@ Terima kasih atas minat Anda untuk berkontribusi pada proyek ini! Berikut adalah
 - [Markdown Guide](https://www.markdownguide.org/)
 - [MySQL Documentation](https://dev.mysql.com/doc/)
 - [GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Testing Best Practices](https://dev.mysql.com/doc/refman/8.0/en/testing.html)
+- [Code Style Guide](https://dev.mysql.com/doc/internals/en/coding-style.html)
 
 ## ⚖️ Code of Conduct
 
