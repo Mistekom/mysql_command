@@ -23,12 +23,16 @@
       - [Triggers](#triggers)
       - [Events](#events)
       - [Partitioning](#partitioning)
+    - [🔷 Transaksi (Transaction)](#-transaksi-transaction)
+    - [🔷 User Management](#-user-management)
     - [🔷 Best Practices dan Keamanan](#-best-practices-dan-keamanan)
       - [Performance Tuning](#performance-tuning)
       - [Security Best Practices](#security-best-practices)
       - [Monitoring dan Maintenance](#monitoring-dan-maintenance)
   - [📌 Catatan Penting](#-catatan-penting)
   - [⚡ Performance Tips](#-performance-tips)
+    - [Query Optimization](#query-optimization)
+    - [Table Design](#table-design)
   - [🔒 Security Best Practices](#-security-best-practices)
   - [⚠️ Common Pitfalls](#️-common-pitfalls)
 
@@ -72,6 +76,7 @@
 | `DELETE` | Menghapus data dari tabel | `DELETE FROM users WHERE id = 1;` |
 | `DELETE ... ORDER BY` | Menghapus data dengan urutan tertentu | `DELETE FROM users ORDER BY last_login LIMIT 10;` |
 | `DELETE ... LIMIT` | Membatasi jumlah data yang dihapus | `DELETE FROM users LIMIT 10;` |
+| `INSERT ... VALUES (...), (...), ...` | Menambah multiple data | `INSERT INTO users (name) VALUES ('John'), ('Jane'), ('Bob');` |
 
 ### 🔷 Perintah DQL (Data Query Language)
 
@@ -84,6 +89,18 @@
 | `SELECT ... INTO DUMPFILE` | Menyimpan hasil query ke file biner | `SELECT data INTO DUMPFILE '/tmp/file.bin' FROM files;` |
 | `SELECT ... FOR UPDATE` | Mengunci baris untuk update | `SELECT * FROM users WHERE id = 1 FOR UPDATE;` |
 | `SELECT ... LOCK IN SHARE MODE` | Mengunci baris untuk dibaca | `SELECT * FROM users WHERE id = 1 LOCK IN SHARE MODE;` |
+| `ORDER BY` | Mengurutkan hasil query | `SELECT * FROM users ORDER BY name ASC;` |
+| `GROUP BY` | Mengelompokkan hasil query | `SELECT department, COUNT(*) FROM users GROUP BY department;` |
+| `HAVING` | Memfilter hasil setelah GROUP BY | `SELECT department, COUNT(*) FROM users GROUP BY department HAVING COUNT(*) > 5;` |
+| `LIMIT` | Membatasi jumlah hasil query | `SELECT * FROM users LIMIT 10;` |
+| `INNER JOIN` | Menggabungkan dua tabel berdasarkan kondisi | `SELECT users.name, orders.order_id FROM users INNER JOIN orders ON users.id = orders.user_id;` |
+| `LEFT JOIN` | Menggabungkan dua tabel dan mengambil semua baris dari tabel kiri | `SELECT users.name, orders.order_id FROM users LEFT JOIN orders ON users.id = orders.user_id;` |
+| `RIGHT JOIN` | Menggabungkan dua tabel dan mengambil semua baris dari tabel kanan | `SELECT users.name, orders.order_id FROM users RIGHT JOIN orders ON users.id = orders.user_id;` |
+| `FULL JOIN` | Menggabungkan dua tabel dan mengambil semua baris dari kedua tabel | `SELECT users.name, orders.order_id FROM users FULL JOIN orders ON users.id = orders.user_id;` |
+| `Subquery` | Query di dalam query | `SELECT * FROM users WHERE id IN (SELECT user_id FROM orders);` |
+| `UNION` | Menggabungkan hasil dari dua atau lebih query | `SELECT name FROM users UNION SELECT name FROM customers;` |
+| `UNION ALL` | Menggabungkan hasil tanpa menghilangkan duplikat | `SELECT name FROM users UNION ALL SELECT name FROM customers;` |
+| `CASE` | Membuat kondisi di dalam query | `SELECT name, CASE WHEN age < 18 THEN 'Minor' ELSE 'Adult' END AS age_group FROM users;` |
 
 ### 🔷 Tipe Data dan Constraint
 
@@ -114,6 +131,8 @@
 | `DEFAULT` | Nilai default | `status VARCHAR(20) DEFAULT 'active'` |
 | `CHECK` | Validasi nilai | `age INT CHECK (age >= 18)` |
 | `AUTO_INCREMENT` | Increment otomatis | `id INT AUTO_INCREMENT` |
+| `ON UPDATE` | Aksi saat update | `FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE` |
+| `ON DELETE` | Aksi saat delete | `FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE` |
 
 ### 🔷 Fungsi Agregasi
 
@@ -283,7 +302,8 @@
 | `JSON_VALID` | Mengecek validitas JSON | `SELECT JSON_VALID(data) FROM users;` |
 | `JSON_OBJECT` | Membuat objek JSON | `SELECT JSON_OBJECT('key', 'value');` |
 | `JSON_ARRAY` | Membuat array JSON | `SELECT JSON_ARRAY('value1', 'value2');` |
-| `JSON_MERGE` | Menggabungkan JSON | `SELECT JSON_MERGE('{"a": 1}', '{"b": 2}');` |
+| `JSON_MERGE_PRESERVE` | Menggabungkan JSON | `SELECT JSON_MERGE_PRESERVE('{"a": 1}', '{"b": 2}');` |
+| `JSON_MERGE_PATCH` | Menggabungkan JSON | `SELECT JSON_MERGE_PATCH('{"a": 1}', '{"b": 2}');` |
 | `JSON_REMOVE` | Menghapus nilai dari JSON | `SELECT JSON_REMOVE(data, '$.key') FROM users;` |
 | `JSON_REPLACE` | Mengganti nilai dalam JSON | `SELECT JSON_REPLACE(data, '$.key', 'new_value') FROM users;` |
 | `JSON_SET` | Mengatur nilai dalam JSON | `SELECT JSON_SET(data, '$.key', 'value') FROM users;` |
@@ -332,6 +352,29 @@
 | `LIST` | Partisi berdasarkan list | `PARTITION BY LIST (status)` |
 | `HASH` | Partisi berdasarkan hash | `PARTITION BY HASH(id)` |
 | `KEY` | Partisi berdasarkan key | `PARTITION BY KEY(id)` |
+
+### 🔷 Transaksi (Transaction)
+
+| Sintaks | Penggunaan | Contoh Penggunaan |
+|---------|------------|-------------------|
+| `START TRANSACTION` | Memulai transaksi | `START TRANSACTION;` |
+| `COMMIT` | Menyimpan perubahan transaksi | `COMMIT;` |
+| `ROLLBACK` | Membatalkan transaksi | `ROLLBACK;` |
+| `SAVEPOINT` | Membuat titik simpan dalam transaksi | `SAVEPOINT savepoint_name;` |
+| `ROLLBACK TO SAVEPOINT` | Kembali ke titik simpan tertentu | `ROLLBACK TO SAVEPOINT savepoint_name;` |
+| `RELEASE SAVEPOINT` | Menghapus titik simpan | `RELEASE SAVEPOINT savepoint_name;` |
+
+### 🔷 User Management
+
+| Sintaks | Penggunaan | Contoh Penggunaan |
+|---------|------------|-------------------|
+| `CREATE USER` | Membuat user baru | `CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';` |
+| `DROP USER` | Menghapus user | `DROP USER 'username'@'localhost';` |
+| `GRANT` | Memberikan hak akses | `GRANT SELECT, INSERT ON database.* TO 'username'@'localhost';` |
+| `REVOKE` | Mencabut hak akses | `REVOKE SELECT, INSERT ON database.* FROM 'username'@'localhost';` |
+| `ALTER USER` | Mengubah user | `ALTER USER 'username'@'localhost' IDENTIFIED BY 'new_password';` |
+| `RENAME USER` | Mengubah nama user | `RENAME USER 'old_username'@'localhost' TO 'new_username'@'localhost';` |
+| `SHOW GRANTS` | Menampilkan hak akses | `SHOW GRANTS FOR 'username'@'localhost';` |
 
 ### 🔷 Best Practices dan Keamanan
 
@@ -473,4 +516,27 @@
    - Connection limits
    - Cache settings
 
-// ... rest of the existing content ... 
+### 🔷 Transaksi (Transaction)
+
+| Sintaks | Penggunaan | Contoh Penggunaan |
+|---------|------------|-------------------|
+| `START TRANSACTION` | Memulai transaksi | `START TRANSACTION;` |
+| `COMMIT` | Menyimpan perubahan transaksi | `COMMIT;` |
+| `ROLLBACK` | Membatalkan transaksi | `ROLLBACK;` |
+| `SAVEPOINT` | Membuat titik simpan dalam transaksi | `SAVEPOINT savepoint_name;` |
+| `ROLLBACK TO SAVEPOINT` | Kembali ke titik simpan tertentu | `ROLLBACK TO SAVEPOINT savepoint_name;` |
+| `RELEASE SAVEPOINT` | Menghapus titik simpan | `RELEASE SAVEPOINT savepoint_name;` |
+
+### 🔷 User Management
+
+| Sintaks | Penggunaan | Contoh Penggunaan |
+|---------|------------|-------------------|
+| `CREATE USER` | Membuat user baru | `CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';` |
+| `DROP USER` | Menghapus user | `DROP USER 'username'@'localhost';` |
+| `GRANT` | Memberikan hak akses | `GRANT SELECT, INSERT ON database.* TO 'username'@'localhost';` |
+| `REVOKE` | Mencabut hak akses | `REVOKE SELECT, INSERT ON database.* FROM 'username'@'localhost';` |
+| `ALTER USER` | Mengubah user | `ALTER USER 'username'@'localhost' IDENTIFIED BY 'new_password';` |
+| `RENAME USER` | Mengubah nama user | `RENAME USER 'old_username'@'localhost' TO 'new_username'@'localhost';` |
+| `SHOW GRANTS` | Menampilkan hak akses | `SHOW GRANTS FOR 'username'@'localhost';` |
+
+// ... existing code ... 
